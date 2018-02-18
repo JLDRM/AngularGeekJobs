@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
