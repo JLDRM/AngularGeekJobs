@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    FormUsuarioComponent
   ],
   imports: [
-    BrowserModule,NgbModule.forRoot()
+    BrowserModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
