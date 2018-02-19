@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-empresa',
@@ -16,7 +16,7 @@ export class FormEmpresaComponent implements OnInit {
     public empresa: string,
     public nif: string,
     public telefono: string,
-    public stack: []
+    public stack: Array<any>
   ) { }
 
   ngOnInit() {

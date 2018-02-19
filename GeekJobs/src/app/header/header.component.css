@@ -1,0 +1,11 @@
+/* NAVBAR */
+.navbar-brand {
+    width: 50px;
+}
+.navbar {
+    background-color: #073549;
+}
+.navbarscroll {
+    background-color: #272727;
+    transition: 1s;
+}
