@@ -11,6 +11,7 @@ import { Empresa } from '../../models/empresa';
 export class FormEmpresaComponent implements OnInit {
   empresaForm: FormGroup;
   empresa: Empresa;
+
   nom_ePattern: "[A-Z ÁÉÍÓÚ][a-z áéíóú]*";
   ema_ePattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   pass_ePattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$";

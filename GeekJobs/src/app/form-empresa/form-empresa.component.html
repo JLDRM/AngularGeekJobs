@@ -7,17 +7,6 @@
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" class="form-control" formControlName="nombre_emp" id="nombre_e" aria-describedby="nameHelp"
             placeholder="Escribe tu nombre" spellcheck="" autofocus>
-          <div *ngIf="nombre_emp.invalid && (nombre_emp.dirty || nombre_emp.touched)" class="alert alert-danger">
-            <div *ngIf="nombre_emp.errors.required">
-              Name is required.
-            </div>
-            <div *ngIf="nombre_emp.errors.minlength">
-              Name must be at least 3 characters long.
-            </div>
-            <div *ngIf="nombre_emp.errors.forbiddenName">
-              Name cannot be Bob.
-            </div>
-          </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
             <label for="apellido">Apellido</label>
             <input type="text" name="apellido" class="form-control" formControlName="apellido_emp" id="apellido_e" aria-describedby="surnameHelp"
@@ -71,7 +60,7 @@
           </div>
         </div>
       </div>
+    </div>
   </form>
-  <p>Form value: {{empresaForm.value | json}}</p>
-  <p>Form status: {{empresaForm.status | json}}</p>
+  <p>empresaForm value: {{ empresaForm.value | json}}</p>
 </section>
