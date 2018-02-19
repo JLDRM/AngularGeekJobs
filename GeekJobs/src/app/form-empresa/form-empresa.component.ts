@@ -10,6 +10,7 @@ import { FormAltaofertaComponent } from '../form-altaoferta/form-altaoferta.comp
 export class FormEmpresaComponent implements OnInit {
   empresaForm: FormGroup;
 
+<<<<<<< HEAD
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -27,6 +28,18 @@ export class FormEmpresaComponent implements OnInit {
       chk_emp: ['', Validators.required]
     })
   }
+=======
+  constructor(
+    public nombre: string,
+    public apellido: string,
+    public email: string,
+    public contraseña: string,
+    public empresa: string,
+    public nif: string,
+    public telefono: string,
+    public stack: Array<any>
+  ) { }
+>>>>>>> 3299ababc1e47c5709e74a688e0fd34906b913d2
 
   ngOnInit(): void {
     this.empresaForm = new FormGroup({
