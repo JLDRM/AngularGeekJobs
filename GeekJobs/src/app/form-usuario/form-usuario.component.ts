@@ -48,11 +48,11 @@ export class FormUsuarioComponent implements OnInit {
           Validators.required,
           Validators.minLength(4),
         ]),
-        'contraseña': new FormControl(this.usuario.password,[
+        'password': new FormControl(this.usuario.password,[
           Validators.required,
           Validators.minLength(4),
         ]),
-        'conficontraseña': new FormControl(this.usuario.confirmacionpass,[
+        'confirmacionpass': new FormControl(this.usuario.confirmacionpass,[
           Validators.required,
           Validators.minLength(4),
         ]),
