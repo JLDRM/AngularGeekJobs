@@ -11,10 +11,13 @@ import { Empresa } from '../../models/empresa';
 export class FormEmpresaComponent implements OnInit {
   empresaForm: FormGroup;
   empresa: Empresa;
+
   nom_ePattern: "[A-Z ÁÉÍÓÚ][a-z áéíóú]*";
   ema_ePattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   pass_ePattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$";
-
+  nif_ePattern="[A-Za-z][0-9]{8}";
+  tel_ePattern:"^(\+34|0034|34)?[6|7|9][0-9]{8}$";
+  
 
   constructor(private fb: FormBuilder) {
     this.createForm();
@@ -66,11 +69,11 @@ export class FormEmpresaComponent implements OnInit {
       ]),
       'nif_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
-
+        Validators.pattern(this.tel_ePattern)
       ]),
       'telefono_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
-
+        Validators.pattern(this.nif_ePattern)
       ]),
       'stack_emp': new FormControl(this.empresa.nombre_emp, [
       ]),
