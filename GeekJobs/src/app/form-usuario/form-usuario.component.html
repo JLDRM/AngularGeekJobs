@@ -1,3 +1,81 @@
-<p>
-  form-usuario works!
-</p>
+<form [formGroup]="usuarioForm" novalidate>
+  <div class="form-row pt-5">
+    <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12">
+      <label for="nombre"></label>Nombre
+      <input class="form-control" id="nombre" type="text" placeholder="Nombre" name="nombre" autocomplete="on" formControlName="nombre">
+      <!-- <span class="errorn" aria-live="polite"></span> -->
+    </div>
+
+    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+      <label for="apellido"></label>Apellido
+      <input class="form-control" id="apellido" type="text" placeholder="Apellido" name="apellido" autocomplete="on" formControlName='apellido'>
+      <!-- <span class="errora" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="email"></label>Email
+      <input class="form-control" id="email" type="email" placeholder="Email" name="email" autocomplete="on" formControlName='email'>
+      <!-- <span class="errorm" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="contraseña"></label>Contraseña
+      <input class="form-control" id="contraseña" type="password" placeholder="Contraseña" name="contraseña" autocomplete="on"
+        formControlName='contraseña'>
+      <!-- <span class="errorpass" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="conficontraseña"></label>Confirmación Contraseña
+      <input class="form-control" id="conficontraseña" type="password" placeholder="Confirmación Contraseña" name="conficontraseña"
+        autocomplete="on" formControlName='conficontraseña'>
+      <!-- <span class="errorconfipass" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="telefono"></label>Telefono
+      <input class="form-control" id="telef" type="Telefono" placeholder="Telefono" name="telefono" autocomplete="on" formControlName='telefono'>
+      <!-- <span class="errort" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="habilidad"></label>¿Cuál es tu principal habilidad técnica?
+      <input class="form-control" id="habili" type="text" placeholder="¿Cuál es tu principal habilidad técnica?" name="habilidad"
+        autocomplete="on" formControlName='habilidades'>
+      <!-- <span class="errorh" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
+      <label for="hobby"></label>¿Y tu hobby favorito?
+      <input class="form-control" id="hobby" type="text" placeholder="¿Y tu hobby favorito?" name="hobby" autocomplete="on" FormControlName='hobby'>
+      <!--  <span class="errorb" aria-live="polite"></span> -->
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-8 col-lg-8 col-md-8 col-sm-8">
+      <label for="cv" class="custom-file-label">Sube tu CV!</label>
+      <input class="custom-file-input" id="cv" type="file" placeholder="Sube tu CV" name="cv" capture>
+    </div>
+  </div>
+
+  <div class="form-row justify-content-center">
+    <div class="form-group col-12 col-lg-12 col-md-12 col-sm-8">
+      <input class="btn btn-primary" id="enviar" type="submit" placeholder="Enviar" value="Registrarse">
+    </div>
+  </div>
+</form>
+
+<p>Form value: {{ usuarioForm.value | json }}</p>
