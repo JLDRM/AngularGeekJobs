@@ -16,7 +16,7 @@ import { FormEmpresaComponent } from './form-empresa/form-empresa.component';
     AppComponent,
     RegistroUsuarioComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
     FormEmpresaComponent,
     FormUsuarioComponent
 

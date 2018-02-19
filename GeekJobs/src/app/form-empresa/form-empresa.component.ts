@@ -16,7 +16,7 @@ export class FormEmpresaComponent implements OnInit {
     public empresa: string,
     public nif: string,
     public telefono: string,
-    public stack: []
+    public stack: Array<any>
   ) { }
 
   ngOnInit() {
