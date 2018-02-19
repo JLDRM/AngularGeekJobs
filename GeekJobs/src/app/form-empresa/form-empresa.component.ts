@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormAltaofertaComponent } from '../form-altaoferta/form-altaoferta.component';
 
 @Component({
   selector: 'app-form-empresa',
@@ -7,19 +8,48 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./form-empresa.component.css']
 })
 export class FormEmpresaComponent implements OnInit {
+  empresaForm: FormGroup;
 
-  constructor(
-    public nombre: string,
-    public apellido: string,
-    public email: string,
-    public contraseña: string,
-    public empresa: string,
-    public nif: string,
-    public telefono: string,
-    public stack: []
-  ) { }
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+  createForm() {
+    this.empresaForm = this.fb.group({
+      nombre_emp: ['', Validators.required],
+      apellido_emp: ['', Validators.required],
+      email_emp: ['', Validators.required],
+      password_emp: ['', Validators.required],
+      cpassword_emp: ['', Validators.required],
+      empresa_emp: ['', Validators.required],
+      nif_emp: ['', Validators.required],
+      telefono_emp: ['', Validators.required],
+      stack_emp: [[], Validators.required],
+      chk_emp: ['', Validators.required]
+    })
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.empresaForm = new FormGroup({
+      'nombre_emp': new FormControl(this.empresa.nombre_emp,[
+        Validators.required,
+        Validators.minLength(3),
+
+      ])
+    });
+  }
+  ngOnChanges(){
+    this.empresaForm.setValue({
+      nombre_emp: this.nombre_emp,
+      apellido_emp: this.nombre_emp,
+      email_emp: ['', Validators.required],
+      password_emp: ['', Validators.required],
+      cpassword_emp: ['', Validators.required],
+      empresa_emp: ['', Validators.required],
+      nif_emp: ['', Validators.required],
+      telefono_emp: ['', Validators.required],
+      stack_emp: [[], Validators.required],
+      chk_emp: ['', Validators.required]
+    })
   }
 
 }

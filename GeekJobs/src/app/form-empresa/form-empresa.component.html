@@ -1,62 +1,79 @@
 <section class="container formul rounded-bottom">
-  <form [formGroup]="" (ngSubmit)="onSubmit()" novalidate>
-      <a name="inscripc" id="inscripc"></a>
+  <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()" novalidate>
+    <a name="inscripc" id="inscripc"></a>
+    <div class="form-group">
       <div class=" form-row pt-5">
-          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-              <label for="nombre">Nombre</label>
-              <input type="text" name="nombre" class="form-control" formControlName= "nombre_emp" id="nombre_e" aria-describedby="nameHelp" placeholder="Escribe tu nombre"
-                  pattern="[A-Z ÁÉÍÓÚ][a-z áéíóú]*" spellcheck="" autofocus>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" class="form-control" formControlName="nombre_emp" id="nombre_e" aria-describedby="nameHelp"
+            placeholder="Escribe tu nombre" pattern="[A-Z ÁÉÍÓÚ][a-z áéíóú]*" spellcheck="" autofocus>
+          <div *ngIf="nombre_emp.invalid && (nombre_emp.dirty || nombre_emp.touched)" class="alert alert-danger">
+            <div *ngIf="nombre_emp.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="nombre_emp.errors.minlength">
+              Name must be at least 3 characters long.
+            </div>
+            <div *ngIf="nombre_emp.errors.forbiddenName">
+              Name cannot be Bob.
+            </div>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-              <label for="apellido">Apellido</label>
-              <input type="text" name="apellido" class="form-control" formControlName= "apellido_emp" id="apellido_e" aria-describedby="surnameHelp" placeholder="Escribe tu apellido"
-                  pattern="[A-Z ÁÉÍÓÚ][a-z áéíóú]*" spellcheck="">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" class="form-control" formControlName="apellido_emp" id="apellido_e" aria-describedby="surnameHelp"
+              placeholder="Escribe tu apellido" pattern="[A-Z ÁÉÍÓÚ][a-z áéíóú]*" spellcheck="">
           </div>
-      </div>
-      <div class="form-row form-group px-1">
+        </div>
+        <div class="form-row form-group px-1">
           <label for="email">Email</label>
-          <input type="email" name="email" class="form-control" formControlName= "email_emp" id="email_e" aria-describedby="emailHelp" placeholder="Escribe tu e-mail"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-      </div>
-      <div class="form-row form-group px-1">
+          <input type="email" name="email" class="form-control" formControlName="email_emp" id="email_e" aria-describedby="emailHelp"
+            placeholder="Escribe tu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        </div>
+        <div class="form-row form-group px-1">
           <label for="contraseña">Contraseña</label>
-          <input type="password" name="contraseña" class="form-control" formControlName= "password_emp" id="contraseña_e" placeholder="Elige una contraseña" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
-      </div>
-      <div class="form-row form-group px-1">
+          <input type="password" name="contraseña" class="form-control" formControlName="password_emp" id="contraseña_e" placeholder="Elige una contraseña"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
+        </div>
+        <div class="form-row form-group px-1">
           <label for="ccontraseña">Confirmación Contraseña</label>
-          <input type="password" name="ccontraseña" class="form-control" formControlName= "cpassword_emp" id="ccontraseña_e" placeholder="Confirma tu contraseña" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
-      </div>
-      <div class="form-row form-group px-1">
+          <input type="password" name="ccontraseña" class="form-control" formControlName="cpassword_emp" id="ccontraseña_e" placeholder="Confirma tu contraseña"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
+        </div>
+        <div class="form-row form-group px-1">
           <label for="empresa">Empresa</label>
-          <input type="text" name="empresa" class="form-control" formControlName= "empresa_emp" id="empresa_e" placeholder="Escribe el nombre de tu empresa">
-      </div>
-      <div class=" form-row">
+          <input type="text" name="empresa" class="form-control" formControlName="empresa_emp" id="empresa_e" placeholder="Escribe el nombre de tu empresa">
+        </div>
+        <div class=" form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-              <label for="nif">NIF</label>
-              <input type="text" name="nif" class="form-control" formControlName= "nif_emp" id="nif_e" placeholder="Escribe el NIF" pattern="[A-Za-z][0-9]{8}">
+            <label for="nif">NIF</label>
+            <input type="text" name="nif" class="form-control" formControlName="nif_emp" id="nif_e" placeholder="Escribe el NIF" pattern="[A-Za-z][0-9]{8}">
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-              <label for="telefono">Teléfono</label>
-              <input name="telefono" class="form-control" formControlName= "telefono_emp" id="telefono_e" placeholder="Escribe tu teléfono" pattern="^(\+34|0034|34)?[6|7|9][0-9]{8}$">
+            <label for="telefono">Teléfono</label>
+            <input name="telefono" class="form-control" formControlName="telefono_emp" id="telefono_e" placeholder="Escribe tu teléfono"
+              pattern="^(\+34|0034|34)?[6|7|9][0-9]{8}$">
           </div>
-      </div>
-      <div class="form-row px-1 mb-4">
+        </div>
+        <div class="form-row px-1 mb-4">
           <label for="stack">Stack Teconológico</label>
-          <input type="text" name="stack" class="form-control" formControlName= "stack_emp" id="stack_e" placeholder="Opcional">
-      </div>
-      <div class="form-row justify-content-center mb-4">
+          <input type="text" name="stack" class="form-control" formControlName="stack_emp" id="stack_e" placeholder="Opcional">
+        </div>
+        <div class="form-row justify-content-center mb-4">
           <button type="submit" class="btn btn-primary" id="bot">Registrar</button>
-      </div>
-      <div class="form-row justify-content-center pb-4 mb-4">
+        </div>
+        <div class="form-row justify-content-center pb-4 mb-4">
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="idreg" id="idreg">
-              <div>
-                  <label class="form-check-label" for="idreg">
-                      Al crear una cuenta confirmas que has leído y aceptas la
-                      <a href="politica_privacidad.html">Política de Privacidad</a>
-                  </label>
-              </div>
+            <input class="form-check-input, form-control" formControlName="chk_emp" type="checkbox" name="idreg" id="idreg">
+            <div>
+              <label class="form-check-label" for="idreg">
+                Al crear una cuenta confirmas que has leído y aceptas la
+                <a href="politica_privacidad.html">Política de Privacidad</a>
+              </label>
+            </div>
           </div>
+        </div>
       </div>
   </form>
+  <p>Form value: {{empresaForm.value | json}}</p>
+  <p>Form status: {{empresaForm.status | json}}</p>
 </section>
