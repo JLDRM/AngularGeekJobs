@@ -11,7 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 import { FormEmpresaComponent } from './form-empresa/form-empresa.component';
 import { FormAltaofertaComponent } from './form-altaoferta/form-altaoferta.component';
+
 import { AppRoutingModule } from './app-routing.module';
+
+import { FormLoginEmpComponent } from './form-login-emp/form-login-emp.component';
+import { FormLoginGeekComponent } from './form-login-geek/form-login-geek.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     FormEmpresaComponent,
     FormUsuarioComponent,
-    FormAltaofertaComponent
+    FormAltaofertaComponent,
+    FormLoginEmpComponent,
+    FormLoginGeekComponent
 
   ],
   imports: [
