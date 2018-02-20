@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { matchOtherValidator } from '../directivas/custom-validator-pass-equal';
 
 import { Geek } from '../../models/geek';
 
@@ -73,7 +74,8 @@ export class FormUsuarioComponent implements OnInit {
       ]),
       'confirmacionpass': new FormControl(this.usuario.confirmacionpass, [
         Validators.required,
-        Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
+        Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$'),
+        matchOtherValidator('password')
 
       ]),
       'telefono': new FormControl(this.usuario.telefono, [
@@ -93,6 +95,16 @@ export class FormUsuarioComponent implements OnInit {
       ])
 
     })
+  }
+
+  onSubmitado(){
+    if(this.usuarioForm.valid){
+      console.log('consuelo log');
+
+    }else{
+      alert('El Formulario contiene errores')
+    }
+    
   }
 
 }
