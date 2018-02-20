@@ -18,6 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { GeekService } from './geek.service';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { HomeGeekComponent } from './home-geek/home-geek.component';
+import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
     FormLoginGeekComponent,
     FormLoginEmpComponent,
     PerfilUsuarioComponent,
-    PoliticaPrivacidadComponent
+    PoliticaPrivacidadComponent,
+    HomeGeekComponent,
+    HomeEmpresaComponent
   ],
   imports: [
     BrowserModule,
