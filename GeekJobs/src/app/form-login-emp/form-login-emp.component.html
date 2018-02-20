@@ -14,6 +14,11 @@
 
               <input type="email" name="email" class="form-control" id="mail-emp" placeholder="usuario@email.com" formControlName="email_emp">
               <span class="error" aria-live="polite"></span>
+              <!--Span error-->
+              <div *ngIf="loginEmpForm.get('email_emp').invalid && (loginEmpForm.get('email_emp').dirty || loginEmpForm.get('email_emp').touched)"
+                class="alert alert-danger">
+                <span>Login incorrecto</span>
+              </div>
             </div>
           </div>
           <div class="form-group has-danger">
@@ -24,6 +29,11 @@
               </div>
               <input type="password" name="password" class="form-control" id="pass-emp" formControlName="password_emp">
               <span class="errorp" aria-live="polite"></span>
+              <!--Span error-->
+              <div *ngIf="loginEmpForm.get('password_emp').invalid && (loginEmpForm.get('password_emp').dirty || loginEmpForm.get('password_emp').touched)"
+                class="alert alert-danger">
+                <span>Login incorrecto</span>
+              </div>
             </div>
           </div>
         </div>
@@ -34,7 +44,6 @@
     <div class="row-fluid formlogin">
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4" style=>
           <div class="form-check">
             <button type="submit" class="btn btn-success" id="bttn-emp">
               <i class="fa fa-paper-plane-o" style="padding-right: 1em"></i>Entra</button>

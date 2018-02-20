@@ -16,9 +16,6 @@ export class FormLoginGeekComponent implements OnInit {
     password_geek: "",
   }
 
-  emailPattern: "^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$";
-  passwordPattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$;";
-
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -33,19 +30,28 @@ export class FormLoginGeekComponent implements OnInit {
 ngOnInit(): void {
 
   this.loginGeekForm = new FormGroup({
-    'email': new FormControl(this.login.email_geek, [
+    'email_geek': new FormControl(this.login.email_geek, [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern(this.emailPattern)
+      Validators.email
     ]),
-    'password': new FormControl(this.login.password_geek, [
+    'password_geek': new FormControl(this.login.password_geek, [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern(this.passwordPattern)
+      Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$")
     ]),
   })
 }
 
 ngOnChanges() {
+}
+onSubmit(){
+  if(this.loginGeekForm.valid){
+    console.log('Bienvenid@ a Geek Jobs');
+
+  }else{
+    alert('Lo sentimos, se ha producido un error')
+  }
+  
 }
 }
