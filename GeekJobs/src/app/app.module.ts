@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 import { FormEmpresaComponent } from './form-empresa/form-empresa.component';
 import { FormAltaofertaComponent } from './form-altaoferta/form-altaoferta.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormAltaofertaComponent } from './form-altaoferta/form-altaoferta.compo
 
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, ReactiveFormsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
