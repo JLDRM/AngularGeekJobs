@@ -23,13 +23,6 @@ export class FormEmpresaComponent implements OnInit {
     chk_emp: ''
   };
 
-  nom_ePattern: "[a-zA-Z ]*";
-  ema_ePattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
-  pass_ePattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$";
-  nif_ePattern : "[A-Za-z][0-9]{8}";
-  tel_ePattern: "^(\+34|0034|34)?[6|7|9][0-9]{8}$";
-
-
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -53,21 +46,21 @@ export class FormEmpresaComponent implements OnInit {
       'nombre_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
         Validators.minLength(3),
-        Validators.pattern(this.nom_ePattern)
+        Validators.pattern("[A-Z ÁÉÍÓÚ][a-z áéíóú]*")
       ]),
       'apellido_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
         Validators.minLength(3),
-        Validators.pattern(this.nom_ePattern)
+        Validators.pattern("[A-Z ÁÉÍÓÚ][a-z áéíóú]*")
       ]),
       'email_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
-        Validators.pattern(this.ema_ePattern)
+        Validators.email
       ]),
       'password_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
         Validators.minLength(6),
-        Validators.pattern(this.pass_ePattern)
+        Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$")
       ]),
       'cpassword_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
@@ -80,11 +73,11 @@ export class FormEmpresaComponent implements OnInit {
       ]),
       'nif_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
-        Validators.pattern(this.tel_ePattern)
+        Validators.pattern("[A-Za-z][0-9]{8}")
       ]),
       'telefono_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
-        Validators.pattern(this.nif_ePattern)
+        Validators.pattern("[0-9]{9}")
       ]),
       'stack_emp': new FormControl(this.empresa.nombre_emp, [
       ]),

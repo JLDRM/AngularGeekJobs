@@ -5,26 +5,46 @@
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
         <label for="inputTitulo">Título de la posición</label>
         <input type="text" id="tituloPosicion" class="form-control" required name="position" placeholder="Ej. Python developer" formControlName="position">
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('position').invalid && (altaofertaForm.get('position').dirty || altaofertaForm.get('position').touched)"
+          class="alert alert-danger">
+          <span>Este campo no puede contener carácteres especiales</span>
+        </div>
       </div>
     </div>
 
     <div class="form-row">
-      <label for="inputDescripcion">Título de la posición</label>
+      <label for="inputDescripcion">Job description</label>
     </div>
 
     <div class="form-row">
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
         <textarea class="form-control" id="jobDescription" class="form-control" name="jobdescription" required maxlength="300" placeholder="Ayuda a los candidatos a entender tus necesidades"
-        formControlName="jobDescription"> </textarea>
+          formControlName="jobDescription"> </textarea>
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('jobDescription').invalid && (altaofertaForm.get('jobDescription').dirty || altaofertaForm.get('jobDescription').touched)"
+          class="alert alert-danger">
+          <span>Este campo es obligatorio</span>
+        </div>
       </div>
 
 
 
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-          <label>Formación</label>
-        <input type="text" class="form-control" required name="training" id="formacion" placeholder="Formación" formControlName="trainign">
+        <label>Formación</label>
+        <input type="text" class="form-control" required name="training" id="formacion" placeholder="Formación" formControlName="training">
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('training').invalid && (altaofertaForm.get('training').dirty || altaofertaForm.get('training').touched)"
+          class="alert alert-danger">
+          <span>Este campo no puede contener números ni carácteres especiales</span>
+        </div>
         <label>Ubicación</label>
         <input type="text" class="form-control" required name="location" placeholder="Ubicación" id="ubicacion" formControlName="location">
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('location').invalid && (altaofertaForm.get('location').dirty || altaofertaForm.get('location').touched)"
+          class="alert alert-danger">
+          <span>Este campo no puede contener números ni carácteres especiales</span>
+        </div>
         <label>Años de experiencia</label>
         <input type="range" class="form-control" required name="experience" id="experiencia">
         <label>Salario</label>
@@ -43,12 +63,26 @@
         <label>Idiomas</label>
         <input type="text" class="form-control" name="languajes" formControlName="languajes" required placeholder="Ej. Inglés, Francés, ..."
           id="idiomas">
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('languajes').invalid && (altaofertaForm.get('languajes').dirty || altaofertaForm.get('languajes').touched)"
+          class="alert alert-danger">
+          <span>Este campo no puede contener números ni carácteres especiales</span>
+        </div>
         <label>Soft skills</label>
         <input type="text" class="form-control" required name="sskills" formControlName="sskills" placeholder="Ej. Trabajo en equipo, Orientación al cliente, etc..."
           id="softSkills">
+        <!--Span error-->
+        <div *ngIf="altaofertaForm.get('sskills').invalid && (altaofertaForm.get('sskills').dirty || altaofertaForm.get('sskills').touched)"
+          class="alert alert-danger">
+          <span>Este campo no puede contener números ni carácteres especiales</span>
+        </div>
         <label>Habilidades técnicas</label>
         <input type="text" class="form-control" required name="hskills" formControlName="hskills" placeholder="Ej. Python, Django, REST API,.."
           id="hardSkills">
+        <div *ngIf="altaofertaForm.get('hskills').invalid && (altaofertaForm.get('hskills').dirty || altaofertaForm.get('hskills').touched)"
+          class="alert alert-danger">
+          <span>Este campo es obligatorio</span>
+        </div>
       </div>
     </div>
 

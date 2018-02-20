@@ -17,6 +17,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { AppRoutingModule } from './app-routing.module';
 
 import { GeekService } from './geek.service';
+import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { GeekService } from './geek.service';
     FormAltaofertaComponent,
     FormLoginGeekComponent,
     FormLoginEmpComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    PoliticaPrivacidadComponent
   ],
   imports: [
     BrowserModule,
