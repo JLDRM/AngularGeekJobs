@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ajax } from './ajax';
-
 import { GeekService } from '../geek.service';
+import { Geek } from '../../models/geek';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -9,31 +8,21 @@ import { GeekService } from '../geek.service';
   styleUrls: ['./perfil-usuario.component.css']
 })
 export class PerfilUsuarioComponent implements OnInit {
-  usuarios;
+  usuario;
+  fotoPerfil = 'http://discmdgroup.com/wp-content/uploads/2012/06/Lolo-Jones-profile.jpg';
   nombre;
   apellidos;
   descripcion;
+  habilidades;
+  portafolio;
+  experiencia;
+  formacion;
 
   constructor(private geekService: GeekService) {
+    this.geekService.getUsuarioFromMocky()
+      .then(output => this.usuario = output)
+      .catch(error => console.log(error));
   }
 
-  ngOnInit() {
-    this.getUsersFromMocky();
-  }
-
-  getUsersFromMocky(): void {
-    this.geekService.getUsuarios().subscribe(usuarios => this.usuarios = usuarios);
-    this.nombre = this.usuarios.nombre;
-  }
-
-  getUsuarios() {
-
-    Ajax('GET', 'http://www.mocky.io/v2/5a7190212f000035127762e5', (data) => {
-      this.usuarios = data;
-      console.log(data);
-      this.nombre = this.usuarios.nombre;
-      this.descripcion = this.usuarios.descripcion;
-    });
-  }
-
+  ngOnInit() { }
 }

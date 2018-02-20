@@ -1,6 +1,4 @@
-export class loginEmp {
-
-    email_emp: string;
-    password_emp: string;
-   
-  }
+export class LoginEmp {
+  email_emp: string;
+  password_emp: string;
+}
