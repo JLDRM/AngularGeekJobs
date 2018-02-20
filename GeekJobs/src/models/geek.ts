@@ -8,9 +8,9 @@ export class Geek {
   portafolio: string;
   experiencia: string;
   formacion: string;
-  email: string;
-  password: string;
   confirmacionpass: string;
   telefono: string;
   hobby: string;
+  email: string;
+  password: string;
 }
