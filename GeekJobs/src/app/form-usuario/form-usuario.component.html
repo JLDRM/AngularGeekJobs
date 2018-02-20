@@ -1,4 +1,4 @@
-<form [formGroup]="usuarioForm" novalidate>
+<form [formGroup]="usuarioForm"  (ngSubmit)="onSubmitado()" novalidate>
   <div class="form-row pt-5">
     <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12">
       <label for="nombre"></label>Nombre
@@ -33,10 +33,10 @@
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="contraseña"></label>Contraseña
       <input class="form-control" id="contraseña" type="password" placeholder="Contraseña" name="contraseña" formControlName='password'>
-      <div *ngIf="usuarioForm.get('contraseña').invalid && (usuarioForm.get('contraseña').dirty || usuarioForm.get('contraseña').touched)"
+      <div *ngIf="usuarioForm.get('password').invalid && (usuarioForm.get('password').dirty || usuarioForm.get('password').touched)"
         class="alert alert-danger">
         <span>Debes introducir una contraseña valida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter Especial</span>
-        <!-- <span *ngIf="usuarioForm.get('contraseña').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span> -->
+        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
       <div *ngIf="usuarioForm.get('confirmacionpass').invalid && (usuarioForm.get('confirmacionpass').dirty || usuarioForm.get('confirmacionpass').touched)"
         class="alert alert-danger">
         <span>Debes introducir una confirmacion de contraseña valida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter Especial</span>
-        <!-- <span *ngIf="usuarioForm.get('contraseña').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span> -->
+        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span>
       </div>
     </div>
   </div>
@@ -89,7 +89,3 @@
     </div>
   </div>
 </form>
-
-<p>Form value: {{ usuarioForm.value | json }}</p>
-<p>Form status: {{ usuarioForm.valid | json }}</p>
-<p>Hola: {{ usuarioForm.get('nombre').value }}</p>
