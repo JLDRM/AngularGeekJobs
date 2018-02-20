@@ -23,7 +23,7 @@ export class FormEmpresaComponent implements OnInit {
     chk_emp: ''
   };
 
-  nom_ePattern: "[A-Z ÁÉÍÓÚ][a-z áéíóú]*";
+  nom_ePattern: "[a-zA-Z ]*";
   ema_ePattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   pass_ePattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$";
   nif_ePattern : "[A-Za-z][0-9]{8}";
