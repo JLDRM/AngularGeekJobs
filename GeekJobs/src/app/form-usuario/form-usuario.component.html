@@ -17,6 +17,15 @@
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="email"></label>Email
       <input class="form-control" id="email" type="email" placeholder="Email" name="email" autocomplete="on" formControlName='email'>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          email is required .
+        </div>
+      </div>
+      <!-- <div *ngIf="email.touched && email.invalid" >
+        <span style="color:red" >Email is required.</span>
+        <span>Invalid email address.</span>
+      </div> -->
       <!-- <span class="errorm" aria-live="polite"></span> -->
     </div>
   </div>
@@ -59,7 +68,7 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="hobby"></label>¿Y tu hobby favorito?
-      <input class="form-control" id="hobby" type="text" placeholder="¿Y tu hobby favorito?" name="hobby" autocomplete="on" FormControlName='hobby'>
+      <input class="form-control" id="hobby" type="text" placeholder="¿Y tu hobby favorito?" name="hobby" autocomplete="on" formControlName='hobby'>
       <!--  <span class="errorb" aria-live="polite"></span> -->
     </div>
   </div>
@@ -79,3 +88,4 @@
 </form>
 
 <p>Form value: {{ usuarioForm.value | json }}</p>
+<p>Form status: {{ usuarioForm.valid | json }}</p>

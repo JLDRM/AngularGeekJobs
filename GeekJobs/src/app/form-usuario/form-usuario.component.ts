@@ -13,7 +13,22 @@ import { Geek } from '../../models/geek';
 export class FormUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
-  usuario: Geek;
+  usuario: Geek = {
+    nombre: '',
+    apellidos: '',
+    fotoPerfil: '',
+    descripcion: '',
+    habilidadesPrincipales: '',
+    habilidades: '',
+    portafolio: '',
+    experiencia: '',
+    formacion: '',
+    email: '',
+    password: '',
+    confirmacionpass: '',
+    telefono: '',
+    hobby: ''
+  };
 
   constructor(private fb: FormBuilder) {
     this.createForm();
@@ -30,47 +45,53 @@ export class FormUsuarioComponent implements OnInit {
       habilidades: '',
       hobby: '',
       cv: ''
+    })
+  }
+
+  ngOnInit(): void {
+    this.usuarioForm = new FormGroup({
+      'nombre': new FormControl(this.usuario.nombre, [
+        Validators.required,
+        Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
+
+      ]),
+      'apellido': new FormControl(this.usuario.apellidos, [
+        Validators.required,
+        Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
+
+      ]),
+      'email': new FormControl(this.usuario.email, [
+        Validators.required,
+        Validators.email
+
+      ]),
+      'password': new FormControl(this.usuario.password, [
+        Validators.required,
+        Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
+
+      ]),
+      'confirmacionpass': new FormControl(this.usuario.confirmacionpass, [
+        Validators.required,
+        Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
+
+      ]),
+      'telefono': new FormControl(this.usuario.telefono, [
+        Validators.required,
+        Validators.pattern('[0-9]{9}')
+
+      ]),
+      'habilidades': new FormControl(this.usuario.habilidades, [
+        Validators.required,
+        Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
+
+      ]),
+      'hobby': new FormControl(this.usuario.hobby, [
+        Validators.required,
+        Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
+
+      ])
 
     })
   }
 
-    ngOnInit(): void {
-      this.usuarioForm = new FormGroup({
-        'nombre': new FormControl(this.usuario.nombre, [
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'apellido': new FormControl(this.usuario.email,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'email': new FormControl(this.usuario.email,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'password': new FormControl(this.usuario.password,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'confirmacionpass': new FormControl(this.usuario.confirmacionpass,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'telefono': new FormControl(this.usuario.telefono,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'habilidades': new FormControl(this.usuario.habilidades,[
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-        'hobby': new FormControl(this.usuario.hobby,[
-          Validators.required,
-          Validators.minLength(4),
-          Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
-        ]),
-        'cv': new FormControl()
-      })
-    }
-
-  }
+}
