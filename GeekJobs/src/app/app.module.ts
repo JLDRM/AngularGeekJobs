@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 import { FormEmpresaComponent } from './form-empresa/form-empresa.component';
+import { FormAltaofertaComponent } from './form-altaoferta/form-altaoferta.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormEmpresaComponent } from './form-empresa/form-empresa.component';
     HeaderComponent,
     FooterComponent,
     FormEmpresaComponent,
-    FormUsuarioComponent
+    FormUsuarioComponent,
+    FormAltaofertaComponent
 
   ],
   imports: [
