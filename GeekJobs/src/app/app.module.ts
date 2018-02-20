@@ -35,8 +35,8 @@ import { GeekService } from './geek.service';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgbModule.forRoot()
-
+    MzButtonModule,
+    MzInputModule
   ],
   providers: [GeekService],
   bootstrap: [AppComponent]
