@@ -1,0 +1,265 @@
+@import url("./reset.css");
+header.empresa {
+    background-color: #073549;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+article {
+    margin-bottom: 80px;
+}
+
+video {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background-color: black;
+}
+
+article {
+    width: 100%;
+}
+
+button {
+    width: 295px;
+    height: 50px;
+}
+
+input {
+    width: 289px;
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 12pt;
+}
+
+
+/* titulos */
+
+h1 {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 60pt;
+    padding-top: 100px;
+    padding-left: 70px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 10pt;
+}
+
+.text_img {
+    font-weight: lighter;
+    color: white;
+    font-size: 12pt;
+    padding-left: 260px;
+    text-align: left;
+    padding-right: 170px;
+}
+
+#color_grey {
+    color: rgb(185, 185, 185);
+}
+
+.divpic {
+    width: 100%;
+    height: 700px;
+    background-image: url("../img/about_us.png")
+}
+
+.titulo {
+    font-size: 15pt;
+    color: #3C3C3B;
+    font-weight: lighter;
+}
+
+.minititulo {
+    font-size: 8pt;
+    color: #B2B2B1;
+    font-weight: lighter;
+}
+
+.divcenter {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aligncenter {
+    content: center;
+}
+
+.divvideo {
+    display: block;
+    height: 290px;
+    overflow: hidden;
+    margin-bottom: 70px;
+}
+
+
+/* botones linkedin */
+
+.linkedin {
+    background: url("../img/linkedinicon.png") no-repeat;
+    background-position: 18em center;
+    background-size: 40px;
+    background-color: #283E49;
+    color: white;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 10pt;
+    color: white;
+    font-weight: regular;
+}
+
+.github {
+    background: url("../img/github_icon.png") no-repeat;
+    background-position: 18em center;
+    background-size: 40px;
+    background-color: #24292D;
+    color: white;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 10pt;
+    color: white;
+    font-weight: regular;
+}
+
+
+/* boton de enviar */
+
+.enviar {
+    background-color: #FFF;
+    font-size: 10pt;
+    font-weight: regular;
+    color: #009EE3;
+}
+
+.enviar:hover {
+    background-color: #009EE3;
+    color: white;
+}
+
+.navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.enviar:active {
+    background-color: #009EE3;
+    color: #fff;
+}
+
+.navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.info div {
+    display: block;
+}
+
+
+/* aqui empieza el pop up */
+
+.modalDialog {
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #073549;
+}
+
+.about {
+    width: 25%;
+}
+
+.about ul {
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 500px;
+    list-style-type: none;
+    text-align: center;
+    display: inline-flex;
+}
+
+.about li {
+    display: inline-block;
+    text-align: right;
+}
+
+.about img {
+    height: 180px;
+}
+
+.about h3 {
+    color: white;
+    text-align: center;
+    padding-top: 1px;
+}
