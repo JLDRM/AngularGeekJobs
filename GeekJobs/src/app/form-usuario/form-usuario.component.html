@@ -1,4 +1,4 @@
-<form [formGroup]="usuarioForm"  (ngSubmit)="onSubmitado()" novalidate>
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmitado()" novalidate>
   <div class="form-row pt-5">
     <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12">
       <label for="nombre"></label>Nombre
@@ -36,7 +36,7 @@
       <div *ngIf="usuarioForm.get('password').invalid && (usuarioForm.get('password').dirty || usuarioForm.get('password').touched)"
         class="alert alert-danger">
         <span>Debes introducir una contraseña valida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter Especial</span>
-        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span>
+        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">== Las contraseñas deben ser iguales</span>
       </div>
     </div>
   </div>
@@ -48,8 +48,9 @@
         formControlName='confirmacionpass'>
       <div *ngIf="usuarioForm.get('confirmacionpass').invalid && (usuarioForm.get('confirmacionpass').dirty || usuarioForm.get('confirmacionpass').touched)"
         class="alert alert-danger">
-        <span>Debes introducir una confirmacion de contraseña valida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter Especial</span>
-        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">Las contraseñas deben ser iguales</span>
+        <span>Debes introducir una confirmacion de contraseña valida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter
+          Especial</span>
+        <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">== Las contraseñas deben ser iguales</span>
       </div>
     </div>
   </div>
@@ -58,6 +59,10 @@
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="telefono"></label>Telefono
       <input class="form-control" id="telef" type="Telefono" placeholder="Telefono" name="telefono" formControlName='telefono'>
+      <div *ngIf="usuarioForm.get('telefono').invalid && (usuarioForm.get('telefono').dirty || usuarioForm.get('telefono').touched)"
+        class="alert alert-danger">
+        <span>Debes introducir un telefono valido</span>
+      </div>
     </div>
   </div>
 
@@ -66,6 +71,10 @@
       <label for="habilidad"></label>¿Cuál es tu principal habilidad técnica?
       <input class="form-control" id="habili" type="text" placeholder="¿Cuál es tu principal habilidad técnica?" name="habilidad"
         formControlName='habilidades'>
+      <div *ngIf="usuarioForm.get('habilidades').invalid && (usuarioForm.get('habilidades').dirty || usuarioForm.get('habilidades').touched)"
+        class="alert alert-danger">
+        <span>Debes introducir un habilidades valido</span>
+      </div>
     </div>
   </div>
 
@@ -73,6 +82,10 @@
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="hobby"></label>¿Y tu hobby favorito?
       <input class="form-control" id="hobby" type="text" placeholder="¿Y tu hobby favorito?" name="hobby" formControlName='hobby'>
+      <div *ngIf="usuarioForm.get('hobby').invalid && (usuarioForm.get('hobby').dirty || usuarioForm.get('hobby').touched)"
+        class="alert alert-danger">
+        <span>Debes introducir un hobby valido</span>
+      </div>
     </div>
   </div>
 

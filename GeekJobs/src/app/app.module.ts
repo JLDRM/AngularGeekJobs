@@ -18,7 +18,11 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { AppRoutingModule } from './app-routing.module';
 
 import { GeekService } from './geek.service';
+import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
+import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { HomeGeekComponent } from './home-geek/home-geek.component';
+import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
     FormLoginGeekComponent,
     FormLoginEmpComponent,
     PerfilUsuarioComponent,
-    PoliticaPrivacidadComponent
+    RegistroEmpresaComponent,
+    RegistroOfertaComponent,
+    PoliticaPrivacidadComponent,
+    HomeGeekComponent,
+    HomeEmpresaComponent
   ],
   imports: [
     BrowserModule,
