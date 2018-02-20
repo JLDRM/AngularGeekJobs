@@ -9,20 +9,32 @@ import { Geek } from '../../models/geek';
 })
 export class PerfilUsuarioComponent implements OnInit {
   usuario;
-  fotoPerfil = 'http://discmdgroup.com/wp-content/uploads/2012/06/Lolo-Jones-profile.jpg';
+  fotoPerfil;
   nombre;
   apellidos;
   descripcion;
   habilidades;
+  habilidadesPrincipales;
   portafolio;
   experiencia;
   formacion;
 
   constructor(private geekService: GeekService) {
+    this.usuario = '';
+    this.fotoPerfil = '../img/persona.png';
+    this.nombre = 'Superman';
+    this.apellidos = '';
+    this.descripcion = '';
+    this.habilidades = '';
+    this.habilidadesPrincipales = '';
+    this.portafolio = '';
+    this.experiencia = '';
+    this.formacion = '';
+  }
+
+  ngOnInit() {
     this.geekService.getUsuarioFromMocky()
       .then(output => this.usuario = output)
       .catch(error => console.log(error));
   }
-
-  ngOnInit() { }
 }
