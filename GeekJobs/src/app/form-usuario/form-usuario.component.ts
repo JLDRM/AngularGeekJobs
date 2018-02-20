@@ -13,6 +13,7 @@ import { Geek } from '../../models/geek';
 export class FormUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
+  
   usuario: Geek = {
     nombre: '',
     apellidos: '',
