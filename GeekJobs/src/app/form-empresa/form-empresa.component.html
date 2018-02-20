@@ -9,12 +9,23 @@
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" class="form-control" formControlName="nombre_emp" id="nombre_e" aria-describedby="nameHelp"
             placeholder="Escribe tu nombre" spellcheck="" autofocus>
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('nombre_emp').invalid && (empresaForm.get('nombre_emp').dirty || empresaForm.get('nombre_emp').touched)"
+            class="alert alert-danger">
+            <span>El nombre debe empezar con mayúscula</span>
+          </div>
         </div>
+
         <!--Input apellido empresa-->
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
           <label for="apellido">Apellido</label>
           <input type="text" name="apellido" class="form-control" formControlName="apellido_emp" id="apellido_e" aria-describedby="surnameHelp"
             placeholder="Escribe tu apellido" spellcheck="">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('apellido_emp').invalid && (empresaForm.get('apellido_emp').dirty || empresaForm.get('apellido_emp').touched)"
+            class="alert alert-danger">
+            <span>El apellido debe empezar con mayúscula</span>
+          </div>
         </div>
       </div>
 
@@ -23,12 +34,22 @@
         <label for="email">Email</label>
         <input type="email" name="email" class="form-control" formControlName="email_emp" id="email_e" aria-describedby="emailHelp"
           placeholder="Escribe tu e-mail">
+        <!--Span error-->
+        <div *ngIf="empresaForm.get('email_emp').invalid && (empresaForm.get('email_emp').dirty || empresaForm.get('email_emp').touched)"
+          class="alert alert-danger">
+          <span>El email es incorrecto</span>
+        </div>
       </div>
 
       <!--Input contraseña empresa-->
       <div class="form-row form-group px-1">
         <label for="contraseña">Contraseña</label>
         <input type="password" name="contraseña" class="form-control" formControlName="password_emp" id="contraseña_e" placeholder="Elige una contraseña">
+        <!--Span error-->
+        <div *ngIf="empresaForm.get('password_emp').invalid && (empresaForm.get('password_emp').dirty || empresaForm.get('password_emp').touched)"
+          class="alert alert-danger">
+          <span>La contraseña debe contener seis dígitos, con al menos una letra mayúscula, una minúscula, un número y un carácter</span>
+        </div>
       </div>
 
       <!--Input confirmación contraseña empresa-->
@@ -36,25 +57,45 @@
         <label for="ccontraseña">Confirmación Contraseña</label>
         <input type="password" name="ccontraseña" class="form-control" formControlName="cpassword_emp" id="ccontraseña_e" placeholder="Confirma tu contraseña"
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
+        <!--Span error-->
+        <div *ngIf="empresaForm.get('cpassword_emp').invalid && (empresaForm.get('cpassword_emp').dirty || empresaForm.get('cpassword_emp').touched)"
+          class="alert alert-danger">
+          <span>La contraseña debe coincidir con la anterior.</span>
+        </div>
       </div>
 
       <!--Input empresa empresa-->
       <div class="form-row form-group px-1">
         <label for="empresa">Empresa</label>
         <input type="text" name="empresa" class="form-control" formControlName="empresa_emp" id="empresa_e" placeholder="Escribe el nombre de tu empresa">
+        <!--Span error-->
+        <div *ngIf="empresaForm.get('empresa_emp').invalid && (empresaForm.get('empresa_emp').dirty || empresaForm.get('empresa_emp').touched)"
+          class="alert alert-danger">
+          <span>Introduce el nombre de la empresa</span>
+        </div>
       </div>
 
-      <!--Input nif yy teléfono empresa-->
+      <!--Input nif y teléfono empresa-->
       <div class=" form-row">
         <!--Input nif empresa-->
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
           <label for="nif">NIF</label>
           <input type="text" name="nif" class="form-control" formControlName="nif_emp" id="nif_e" placeholder="Escribe el NIF">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('nif_emp').invalid && (empresaForm.get('nif_emp').dirty || empresaForm.get('nif_emp').touched)"
+            class="alert alert-danger">
+            <span>Introduce el NIF de la empresa</span>
+          </div>
         </div>
         <!--Input teléfono empresa-->
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
           <label for="telefono">Teléfono</label>
           <input name="telefono" class="form-control" formControlName="telefono_emp" id="telefono_e" placeholder="Escribe tu teléfono">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('telefono_emp').invalid && (empresaForm.get('telefono_emp').dirty || empresaForm.get('telefono_emp').touched)"
+            class="alert alert-danger">
+            <span>Introduce el teléfono de la empresa</span>
+          </div>
         </div>
       </div>
 
@@ -64,12 +105,12 @@
         <input type="text" name="stack" class="form-control" formControlName="stack_emp" id="stack_e" placeholder="Opcional">
       </div>
 
-       <!--Botón empresa-->
+      <!--Botón empresa-->
       <div class="form-row justify-content-center mb-4">
         <button type="submit" class="btn btn-primary" id="bot">Registrar</button>
       </div>
 
-       <!--Input checkbox empresa-->
+      <!--Input checkbox empresa-->
       <div class="form-row justify-content-center pb-4 mb-4">
         <div class="form-check">
           <input class="form-check-input, form-control" formControlName="chk_emp" type="checkbox" name="idreg" id="idreg">
@@ -78,6 +119,11 @@
               Al crear una cuenta confirmas que has leído y aceptas la
               <a href="politica_privacidad.html">Política de Privacidad</a>
             </label>
+            <!--Span error-->
+            <div *ngIf="empresaForm.get('chk_emp').invalid && (empresaForm.get('chk_emp').dirty || empresaForm.get('chk_emp').touched)"
+              class="alert alert-danger">
+              <span>Confirma que aceptas la Política de Privacidad</span>
+            </div>
           </div>
         </div>
       </div>
