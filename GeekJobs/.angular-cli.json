@@ -17,14 +17,10 @@
     "tsconfig": "tsconfig.app.json",
     "testTsconfig": "tsconfig.spec.json",
     "prefix": "app",
-    "styles": ["../node_modules/font-awesome/css/font-awesome.min.css",
-      "../node_modules/materialize-css/dist/css/materialize.min.css",
+    "styles":[
       "styles.css"
-    ],
-    "scripts": ["../node_modules/jquery/dist/jquery.js",
-      "../node_modules/materialize-css/dist/js/materialize.min.js"
-
-    ],
+],
+    "scripts": [],
     "environmentSource": "environments/environment.ts",
     "environments": {
       "dev": "environments/environment.ts",
