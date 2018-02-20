@@ -7,6 +7,7 @@ import { FormAltaofertaComponent } from './form-altaoferta/form-altaoferta.compo
 import { FormLoginEmpComponent } from './form-login-emp/form-login-emp.component';
 import { FormLoginGeekComponent } from './form-login-geek/form-login-geek.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   { path: '', component: FormLoginGeekComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'form-empresa', component: FormEmpresaComponent },
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
   { path: 'form-altaoferta', component: FormAltaofertaComponent },
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent }
 ]
 
 @NgModule({

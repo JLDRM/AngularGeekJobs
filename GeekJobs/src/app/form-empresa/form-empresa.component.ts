@@ -89,4 +89,14 @@ export class FormEmpresaComponent implements OnInit {
   ngOnChanges() {
   }
 
+  onSubmit(){
+    if(this.empresaForm.valid){
+      console.log('Registrado correctamente');
+
+    }else{
+      alert('Lo sentimos, se ha producido un error')
+    }
+    
+  }
+
 }

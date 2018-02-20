@@ -60,7 +60,8 @@
         <!--Span error-->
         <div *ngIf="empresaForm.get('cpassword_emp').invalid && (empresaForm.get('cpassword_emp').dirty || empresaForm.get('cpassword_emp').touched)"
           class="alert alert-danger">
-          <span>La contraseña debe coincidir con la anterior.</span>
+          <span>Confirma la contraseña</span>
+          <span *ngIf="empresaForm.get('password_emp').value!=empresaForm.get('cpassword_emp').value">La contraseña debe coincidir con la anterior</span>
         </div>
       </div>
 

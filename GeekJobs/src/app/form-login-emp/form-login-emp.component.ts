@@ -36,17 +36,27 @@ ngOnInit(): void {
     'email': new FormControl(this.login.email_emp, [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern(this.emailPattern)
+      Validators.pattern("^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$")
     ]),
     'password': new FormControl(this.login.password_emp, [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern(this.passwordPattern)
+      Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$;")
     ]),
   })
 }
 
 ngOnChanges() {
+}
+
+onSubmit(){
+  if(this.loginEmpForm.valid){
+    console.log('Bienvenid@ a Geek Empresas');
+
+  }else{
+    alert('Lo sentimos, se ha producido un error')
+  }
+  
 }
 }
 
