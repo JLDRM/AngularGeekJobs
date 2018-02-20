@@ -11,17 +11,18 @@ import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.compo
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
+import { HomeGeekComponent } from './home-geek/home-geek.component';
 
 const routes: Routes = [
-  { path: '', component: FormLoginGeekComponent },
-  { path: 'form-login-emp', component: FormLoginEmpComponent },
+  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', component: HomeGeekComponent},
+  { path: 'login-emp', component: HomeEmpresaComponent },
+  { path: 'login-geek', component: HomeGeekComponent },
   { path: 'form-usuario', component: RegistroUsuarioComponent },
   { path: 'form-empresa', component: RegistroEmpresaComponent },
-  { path: 'form-usuario', component: RegistroOfertaComponent },
-  { path: 'form-usuario', component: FormUsuarioComponent },
-  { path: 'form-empresa', component: FormEmpresaComponent },
+  { path: 'form-oferta', component: RegistroOfertaComponent },
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
-  { path: 'form-altaoferta', component: FormAltaofertaComponent },
   { path: 'perfil-usuario', component: PerfilUsuarioComponent }
 ]
 

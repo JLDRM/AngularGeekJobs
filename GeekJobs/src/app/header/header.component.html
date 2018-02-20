@@ -1,7 +1,7 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top nanvbar-custom" id="menu">
   <!-- contenedor con el logo -->
-  <a class="navbar-brand" >
+  <a class="navbar-brand">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -11,30 +11,40 @@
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
       <!-- dropdown de HOME -->
-      <li class="dropdown" class="nav-item active">
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" >
+      <!-- <li class="dropdown" class="nav-item active">
+        <a class="dropdown-toggle nav-link" data-toggle="dropdown">
           Home
         </a>
         <ul class="dropdown-menu" id="menuhome">
           <li>
-            <a >Home Usuario</a>
+            <a>Home Usuario</a>
           </li>
           <li>
-            <a >Home Empresa</a>
+            <a>Home Empresa</a>
           </li>
         </ul>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink='login-geek'>Login Usuario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink='form-usuario'>Sobre Nosotros</a>
+        <a class="nav-link" routerLink='login-emp'>Login Empresa</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink='form-empresa'>Contacto</a>
+        <a class="nav-link" routerLink='form-usuario'>Registro Usuario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink='form-oferta'>Inicia</a>
+        <a class="nav-link" routerLink='form-empresa'>Registro Empresa</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link btn btn-outline-secondary btn-xs"  role="button">Regístrate</a>
+        <a class="nav-link" routerLink='form-oferta'>Registro Oferta</a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link btn btn-outline-secondary btn-xs" role="button">Regístrate</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink='perfil-usuario'>Perfil Usuario</a>
       </li>
     </ul>
   </div>
