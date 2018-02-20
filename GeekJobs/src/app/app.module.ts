@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { MzButtonModule, MzInputModule } from 'ng2-materialize';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -48,8 +49,8 @@ import { GeekService } from './geek.service';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MzButtonModule,
-    MzInputModule
+    NgbModule.forRoot()
+
   ],
   providers: [GeekService],
   bootstrap: [AppComponent]
