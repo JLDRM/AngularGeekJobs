@@ -10,30 +10,41 @@ import { Empresa } from '../../models/empresa';
 })
 export class FormEmpresaComponent implements OnInit {
   empresaForm: FormGroup;
-  empresa: Empresa;
+  empresa: Empresa = {
+    nombre_emp: '',
+    apellido_emp: '',
+    email_emp: '',
+    password_emp: '',
+    cpassword_emp: '', 
+    empresa_emp: '', 
+    nif_emp: '',
+    telefono_emp: 123456789, 
+    stack_emp: [],
+    chk_emp: ''
+  };
 
   nom_ePattern: "[A-Z ÁÉÍÓÚ][a-z áéíóú]*";
   ema_ePattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   pass_ePattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$";
-  nif_ePattern="[A-Za-z][0-9]{8}";
-  tel_ePattern:"^(\+34|0034|34)?[6|7|9][0-9]{8}$";
-  
+  nif_ePattern : "[A-Za-z][0-9]{8}";
+  tel_ePattern: "^(\+34|0034|34)?[6|7|9][0-9]{8}$";
+
 
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
   createForm() {
     this.empresaForm = this.fb.group({
-      nombre_emp: ['', Validators.required],
-      apellido_emp: ['', Validators.required],
-      email_emp: ['', Validators.required],
-      password_emp: ['', Validators.required],
-      cpassword_emp: ['', Validators.required],
-      empresa_emp: ['', Validators.required],
-      nif_emp: ['', Validators.required],
-      telefono_emp: ['', Validators.required],
+      nombre_emp: '',
+      apellido_emp: '',
+      email_emp: '',
+      password_emp: '',
+      cpassword_emp: '', 
+      empresa_emp: '', 
+      nif_emp: '',
+      telefono_emp: '', 
       stack_emp: [],
-      chk_emp: ['', Validators.required]
+      chk_emp: ''
     })
   }
 
@@ -61,7 +72,7 @@ export class FormEmpresaComponent implements OnInit {
       'cpassword_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,
         Validators.minLength(6),
-  
+
       ]),
       'empresa_emp': new FormControl(this.empresa.nombre_emp, [
         Validators.required,

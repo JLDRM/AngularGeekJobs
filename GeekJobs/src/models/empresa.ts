@@ -6,8 +6,8 @@ export class Empresa {
     cpassword_emp: string;
     empresa_emp: string;
     nif_emp: string;
-    telefono_emp: string;
-    stack_emp: string;
+    telefono_emp: number;
+    stack_emp: Array<[string]>;
     chk_emp: string;
   }
 
