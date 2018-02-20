@@ -9,13 +9,20 @@ import { FormLoginGeekComponent } from './form-login-geek/form-login-geek.compon
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.component';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
+import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   { path: '', component: FormLoginGeekComponent },
   { path: 'form-login-emp', component: FormLoginEmpComponent },
   { path: 'form-usuario', component: RegistroUsuarioComponent },
   { path: 'form-empresa', component: RegistroEmpresaComponent },
-  { path: 'form-usuario', component: RegistroOfertaComponent }
+  { path: 'form-usuario', component: RegistroOfertaComponent },
+  { path: 'form-usuario', component: FormUsuarioComponent },
+  { path: 'form-empresa', component: FormEmpresaComponent },
+  { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
+  { path: 'form-altaoferta', component: FormAltaofertaComponent },
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent }
 ]
 
 @NgModule({

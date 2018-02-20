@@ -1,51 +1,56 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { loginGeek } from '../../models/loginGeek';
+import { LoginGeek } from '../../models/loginGeek';
 
 @Component({
   selector: 'app-form-login-geek',
   templateUrl: './form-login-geek.component.html',
   styleUrls: ['./form-login-geek.component.css']
 })
-export class FormLoginGeekComponent implements OnInit {
-
+export class FormLoginGeekComponent implements OnInit, OnChanges {
   loginGeekForm: FormGroup;
 
-  login: loginGeek = {
-    email_geek: "",
-    password_geek: "",
-  }
-
-  emailPattern: "^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$";
-  passwordPattern: "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$;";
+  login: LoginGeek = {
+    email_geek: '',
+    password_geek: ''
+  };
 
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
 
   createForm() {
-    this.loginGeekForm = this.fb.group ({
-      email_geek:['', Validators.required],
-      password_geek:['', Validators.required], 
-})
-}
+    this.loginGeekForm = this.fb.group({
+      email_geek: ['', Validators.required],
+      password_geek: ['', Validators.required],
+    });
+  }
 
-ngOnInit(): void {
+  ngOnInit(): void {
+    this.loginGeekForm = new FormGroup({
+      'email_geek': new FormControl(this.login.email_geek, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.email
+      ]),
+      'password_geek': new FormControl(this.login.password_geek, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$')
+      ]),
+    });
+  }
 
-  this.loginGeekForm = new FormGroup({
-    'email': new FormControl(this.login.email_geek, [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.pattern(this.emailPattern)
-    ]),
-    'password': new FormControl(this.login.password_geek, [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.pattern(this.passwordPattern)
-    ]),
-  })
-}
+  ngOnChanges() {
+  }
 
-ngOnChanges() {
-}
+  onSubmit() {
+    if (this.loginGeekForm.valid) {
+      console.log('Bienvenid@ a Geek Jobs');
+
+    } else {
+      alert('Lo sentimos, se ha producido un error')
+    }
+
+  }
 }

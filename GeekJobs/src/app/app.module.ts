@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -19,6 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { GeekService } from './geek.service';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.component';
+import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { HomeGeekComponent } from './home-geek/home-geek.component';
+import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +37,18 @@ import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.compo
     FormLoginEmpComponent,
     PerfilUsuarioComponent,
     RegistroEmpresaComponent,
-    RegistroOfertaComponent
+    RegistroOfertaComponent,
+    PoliticaPrivacidadComponent,
+    HomeGeekComponent,
+    HomeEmpresaComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpModule,
     AppRoutingModule,
-    NgbModule.forRoot()],
+    NgbModule.forRoot()
+  ],
   providers: [GeekService],
   bootstrap: [AppComponent]
 })

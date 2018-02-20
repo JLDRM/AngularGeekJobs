@@ -26,11 +26,6 @@ oferta: Oferta = {
     hskills:"",
 }
 
-  lettNum_oPattern: "^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$";
-  lett_oPattern: "[a-zA-ZáéíóúÁÉÍÓÚ ]+";
-  lettComma_oPattern: "[a-zA-ZáéíóúÁÉÍÓÚ, ]+";
-  lettNumComma_oPattern: "[a-zA-Z0-9,_]*$";
-
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -56,22 +51,21 @@ createForm() {
       'position': new FormControl(this.oferta.position, [
         Validators.required,
         Validators.minLength(3),
-        Validators.pattern(this.lettNum_oPattern)
+        Validators.pattern("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")
       ]),
       'jobDescription': new FormControl(this.oferta.jobDescription, [
         Validators.required,
         Validators.minLength(300),
-        Validators.pattern(this.lettNumComma_oPattern)
       ]),
       'training': new FormControl(this.oferta.training, [
         Validators.required,
         Validators.minLength(5),
-        Validators.pattern(this.lett_oPattern)
+        Validators.pattern("[a-zA-ZáéíóúÁÉÍÓÚ ]+")
       ]),
       'location': new FormControl(this.oferta.location, [
         Validators.required,
         Validators.minLength(5),
-        Validators.pattern(this.lett_oPattern)
+        Validators.pattern("[a-zA-ZáéíóúÁÉÍÓÚ ]+")
       ]),
       'experience': new FormControl(this.oferta.experience, [
       
@@ -85,22 +79,31 @@ createForm() {
       'languajes': new FormControl(this.oferta.languajes, [
         Validators.required,
         Validators.minLength(5),
-        Validators.pattern(this.lettComma_oPattern)
+        Validators.pattern("^[A-Za-z,\. ]{3,50}$")
       ]),
       'sskills': new FormControl(this.oferta.sskills, [
         Validators.required,
         Validators.minLength(5),
-        Validators.pattern(this.lettComma_oPattern)
+        Validators.pattern("[a-zA-ZáéíóúÁÉÍÓÚ ]+")
       ]),
       'hskills': new FormControl(this.oferta.hskills, [
         Validators.required,
         Validators.minLength(5),
-        Validators.pattern(this.lettNumComma_oPattern)
+        Validators.pattern("^[A-Za-z0-9,\. ]{3,50}$")
       ]),
-
     })
    
   }
   ngOnChanges() {
+  }
+
+  onSubmit(){
+    if(this.altaofertaForm.valid){
+      console.log('La oferta se ha publicado correctamente');
+
+    }else{
+      alert('Lo sentimos, se ha producido un error')
+    }
+    
   }
 }

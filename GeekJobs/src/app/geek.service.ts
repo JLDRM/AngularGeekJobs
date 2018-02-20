@@ -1,17 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { Ajax } from './perfil-usuario/ajax';
+import 'rxjs/add/operator/toPromise';
+
+import { Geek } from '../models/geek';
 
 @Injectable()
 export class GeekService {
+  private url = 'http://www.mocky.io/v2/5a8c78043000004c00323f3d';
+  usuarios: Geek[];
 
-  constructor() { }
+  constructor(private http: Http) { }
 
+  getUsuarioFromMocky(): Promise<Geek[]> {
+    return this.http.get(this.url)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
 
-  getUsuarios(): any {
-    Ajax('GET', 'http://www.mocky.io/v2/5a7190212f000035127762e5', (data) => {
-      return data;
-    });
+  private handleError(error: Response): Promise<any> {
+    return Promise.reject(error);
+  }
+
+  private extractData(res: Response): Promise<Geek[]> {
+    return res.json();
   }
 }

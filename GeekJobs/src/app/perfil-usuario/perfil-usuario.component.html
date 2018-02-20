@@ -3,10 +3,10 @@
   <!-- BANNER Y FOTO DE PERFIL -->
   <div id="perfil" class="row profiles_banner">
     <div class="profile-info-block">
-      <div class="profile-image" id="fotoPerfil" style='background-image: url({{fotoPerfil}})'></div>
+      <div class="profile-image" id="fotoPerfil" style="background-image: url(' {{ usuario.fotoPerfil }} ')"></div>
       <div class="profile-name">
         <h1>
-          <a href="#" title="{{nombre}}" id="nombre">{{nombre}} {{apellidos}}</a>
+          <a href="#" title="{{ usuario.nombre }}" id="nombre">{{ usuario.nombre }} {{usuario.apellidos}}</a>
         </h1>
       </div>
     </div>
@@ -24,7 +24,7 @@
           </div>
           <div id="c1" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body" id="desc">
-              {{descripcion}} {{ usuarios }}
+              {{ usuario.descripcion }}
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
           </div>
           <div id="c3" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body" id="hab">
-              {{habilidades}}
+              {{ usuario.habilidades }}
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
           </div>
           <div id="c4" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body" id="por">
-              {{portafolio}}
+              {{ usuario.portafolio }}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
           </div>
           <div id="c5" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body" id="exp">
-              {{experiencia}}
+              {{ usuario.experiencia }}
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
           </div>
           <div id="c6" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body" id="for">
-              {{formacion}}
+              {{ usuario.formacion }}
             </div>
           </div>
         </div>

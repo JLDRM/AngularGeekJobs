@@ -1,6 +1,4 @@
-export class loginGeek {
-
-    email_geek: string;
-    password_geek: string;
-   
-  }
+export class LoginGeek {
+  email_geek: string;
+  password_geek: string;
+}
