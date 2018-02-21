@@ -7,7 +7,7 @@ body {
 .articlejosep {
     background-color: #073549;
     font-family: "Roboto", sans-serif;
-    /* background-image: url(../assets/img/rubia); */
+    background-image: url('/assets/img/rubia.png');
 }
 
 
@@ -29,5 +29,5 @@ footer {
 .articlemarta {
     background-color: #073549;
     font-family: "Roboto", sans-serif;
-    /* background-image: url("../assets/img/empresas.png"); */
+    background-image: url("/assets/img/empresas.png");
 }

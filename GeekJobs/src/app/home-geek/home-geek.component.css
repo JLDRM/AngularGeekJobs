@@ -1,5 +1,5 @@
 .jumbotron {
-    background: url("../../assets/img/home1.png") no-repeat;
+    background: url("/assets/img/home1.png") no-repeat;
     background-size: contain;
     position: relative;
     margin-bottom: 0px;
