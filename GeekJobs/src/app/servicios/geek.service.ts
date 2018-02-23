@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Ajax } from './perfil-usuario/ajax';
+import { Ajax } from './../perfil-usuario/ajax';
 import 'rxjs/add/operator/toPromise';
 
-import { Geek } from '../models/geek';
+import { Geek } from '../../models/geek';
 
 @Injectable()
 export class GeekService {

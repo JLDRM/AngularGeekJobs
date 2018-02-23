@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GeekService } from '../geek.service';
+import { GeekService } from '../servicios/geek.service';
 import { Geek } from '../../models/geek';
 
 @Component({

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -17,7 +16,7 @@ import { FormLoginEmpComponent } from './form-login-emp/form-login-emp.component
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { GeekService } from './geek.service';
+import { GeekService } from './servicios/geek.service';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
@@ -47,7 +46,6 @@ import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    NgbModule.forRoot()
   ],
   providers: [GeekService],
   bootstrap: [AppComponent]
