@@ -21,7 +21,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   constructor(private geekService: GeekService) {
     this.usuario = '';
-    this.fotoPerfil = '../img/persona.png';
+    this.fotoPerfil = '/assets/img/persona.png';
     this.nombre = 'Superman';
     this.apellidos = '';
     this.descripcion = '';
