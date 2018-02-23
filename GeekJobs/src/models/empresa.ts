@@ -7,7 +7,7 @@ export class Empresa {
     empresa_emp: string;
     nif_emp: string;
     telefono_emp: number;
-    stack_emp: Array<[string]>;
+    stack_emp: string[];
     chk_emp: string;
   }
 
