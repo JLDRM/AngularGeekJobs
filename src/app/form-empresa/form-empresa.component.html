@@ -2,13 +2,14 @@
   <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()" novalidate>
     <a name="inscripc" id="inscripc"></a>
     <div class="form-group">
+
       <!--Inputs nombre y apellido-->
       <div class=" form-row pt-5">
         <!--Input nombre empresa-->
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" class="form-control" formControlName="nombre_emp" id="nombre_e" aria-describedby="nameHelp"
-            placeholder="Escribe tu nombre" spellcheck="" autofocus>
+            placeholder="Escribe tu nombre" spellcheck="">
           <!--Span error-->
           <div *ngIf="empresaForm.get('nombre_emp').invalid && (empresaForm.get('nombre_emp').dirty || empresaForm.get('nombre_emp').touched)"
             class="alert alert-danger">
@@ -30,51 +31,60 @@
       </div>
 
       <!--Input email empresa-->
-      <div class="form-row form-group px-1">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" formControlName="email_emp" id="email_e" aria-describedby="emailHelp"
-          placeholder="Escribe tu e-mail">
-        <!--Span error-->
-        <div *ngIf="empresaForm.get('email_emp').invalid && (empresaForm.get('email_emp').dirty || empresaForm.get('email_emp').touched)"
-          class="alert alert-danger">
-          <span>El email es incorrecto</span>
+      <div class="form-row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control" formControlName="email_emp" id="email_e" aria-describedby="emailHelp"
+            placeholder="Escribe tu e-mail">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('email_emp').invalid && (empresaForm.get('email_emp').dirty || empresaForm.get('email_emp').touched)"
+            class="alert alert-danger">
+            <span>El email es incorrecto</span>
+          </div>
         </div>
       </div>
 
       <!--Input contraseña empresa-->
-      <div class="form-row form-group px-1">
-        <label for="contraseña">Contraseña</label>
-        <input type="password" name="contraseña" class="form-control" formControlName="password_emp" id="contraseña_e" placeholder="Elige una contraseña">
-        <!--Span error-->
-        <div *ngIf="empresaForm.get('password_emp').invalid && (empresaForm.get('password_emp').dirty || empresaForm.get('password_emp').touched)"
-          class="alert alert-danger">
-          <span>La contraseña debe contener seis dígitos, con al menos una letra mayúscula, una minúscula, un número y un carácter</span>
+      <div class="form-row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="contraseña">Contraseña</label>
+          <input type="password" name="contraseña" class="form-control" formControlName="password_emp" id="contraseña_e" placeholder="Elige una contraseña">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('password_emp').invalid && (empresaForm.get('password_emp').dirty || empresaForm.get('password_emp').touched)"
+            class="alert alert-danger">
+            <span>La contraseña debe contener seis dígitos, con al menos una letra mayúscula, una minúscula, un número y un carácter</span>
+          </div>
         </div>
       </div>
 
       <!--Input confirmación contraseña empresa-->
-      <div class="form-row form-group px-1">
-        <label for="ccontraseña">Confirmación Contraseña</label>
-        <input type="password" name="ccontraseña" class="form-control" formControlName="cpassword_emp" id="ccontraseña_e" placeholder="Confirma tu contraseña"
-          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
-        <!--Span error-->
-        <div *ngIf="empresaForm.get('cpassword_emp').invalid && (empresaForm.get('cpassword_emp').dirty || empresaForm.get('cpassword_emp').touched)"
-          class="alert alert-danger">
-          <span>Confirma la contraseña</span>
-          <span *ngIf="empresaForm.get('password_emp').value!=empresaForm.get('cpassword_emp').value">La contraseña debe coincidir con la anterior</span>
+      <div class="form-row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="ccontraseña">Confirmación Contraseña</label>
+          <input type="password" name="ccontraseña" class="form-control" formControlName="cpassword_emp" id="ccontraseña_e" placeholder="Confirma tu contraseña"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('cpassword_emp').invalid && (empresaForm.get('cpassword_emp').dirty || empresaForm.get('cpassword_emp').touched)"
+            class="alert alert-danger">
+            <span>Confirma la contraseña</span>
+            <span *ngIf="empresaForm.get('password_emp').value!=empresaForm.get('cpassword_emp').value">La contraseña debe coincidir con la anterior</span>
+          </div>
         </div>
       </div>
 
       <!--Input empresa empresa-->
-      <div class="form-row form-group px-1">
-        <label for="empresa">Empresa</label>
-        <input type="text" name="empresa" class="form-control" formControlName="empresa_emp" id="empresa_e" placeholder="Escribe el nombre de tu empresa">
-        <!--Span error-->
-        <div *ngIf="empresaForm.get('empresa_emp').invalid && (empresaForm.get('empresa_emp').dirty || empresaForm.get('empresa_emp').touched)"
-          class="alert alert-danger">
-          <span>Introduce el nombre de la empresa</span>
+      <div class="form-row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="empresa">Empresa</label>
+          <input type="text" name="empresa" class="form-control" formControlName="empresa_emp" id="empresa_e" placeholder="Escribe el nombre de tu empresa">
+          <!--Span error-->
+          <div *ngIf="empresaForm.get('empresa_emp').invalid && (empresaForm.get('empresa_emp').dirty || empresaForm.get('empresa_emp').touched)"
+            class="alert alert-danger">
+            <span>Introduce el nombre de la empresa</span>
+          </div>
         </div>
       </div>
+
 
       <!--Input nif y teléfono empresa-->
       <div class=" form-row">
@@ -101,9 +111,11 @@
       </div>
 
       <!--Input stack empresa-->
-      <div class="form-row px-1 mb-4">
-        <label for="stack">Stack Teconológico</label>
-        <input type="text" name="stack" class="form-control" formControlName="stack_emp" id="stack_e" placeholder="Opcional">
+      <div class="form-row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
+          <label for="stack">Stack Teconológico</label>
+          <input type="text" name="stack" class="form-control" formControlName="stack_emp" id="stack_e" placeholder="Opcional">
+        </div>
       </div>
 
       <!--Botón empresa-->
@@ -112,25 +124,19 @@
       </div>
 
       <!--Input checkbox empresa-->
-      <div class="form-row justify-content-center pb-4 mb-4">
-        <div class="form-check">
-          <input class="form-check-input, form-control" formControlName="chk_emp" type="checkbox" name="idreg" id="idreg">
-          <div>
-            <label class="form-check-label" for="idreg">
-              Al crear una cuenta confirmas que has leído y aceptas la
-              <a href="politica_privacidad.html">Política de Privacidad</a>
-            </label>
-            <!--Span error-->
-            <div *ngIf="empresaForm.get('chk_emp').invalid && (empresaForm.get('chk_emp').dirty || empresaForm.get('chk_emp').touched)"
-              class="alert alert-danger">
-              <span>Confirma que aceptas la Política de Privacidad</span>
-            </div>
-          </div>
+      <!--<div class="form-check ">
+        <input class="form-check-input, form-control" formControlName="chk_emp" type="checkbox" name="idreg" id="idreg">
+        <label class="form-check-label" for="idreg">
+          Al crear una cuenta confirmas que has leído y aceptas la
+          <a href="">Política de Privacidad</a>
+        </label>
+        <!--Span error-->
+      <!--<div *ngIf="empresaForm.get('chk_emp').invalid && (empresaForm.get('chk_emp').dirty || empresaForm.get('chk_emp').touched)"
+          class="alert alert-danger">
+          <span>Confirma que aceptas la Política de Privacidad</span>
         </div>
-      </div>
+      </div>-->
 
     </div>
   </form>
-  <p>empresaForm value: {{ empresaForm.value | json}}</p>
-  <p>empresaForm status: {{ empresaForm.valid | json}}</p>
 </section>

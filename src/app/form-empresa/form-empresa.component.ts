@@ -19,8 +19,8 @@ export class FormEmpresaComponent implements OnInit {
     empresa_emp: '', 
     nif_emp: '',
     telefono_emp: 123456789, 
-    stack_emp: [],
-    chk_emp: ''
+    stack_emp: []
+    //chk_emp: ''
   };
 
   constructor(private fb: FormBuilder) {
@@ -36,8 +36,8 @@ export class FormEmpresaComponent implements OnInit {
       empresa_emp: '', 
       nif_emp: '',
       telefono_emp: '', 
-      stack_emp: [],
-      chk_emp: ''
+      stack_emp: []
+      //chk_emp: ''
     })
   }
 
@@ -80,10 +80,10 @@ export class FormEmpresaComponent implements OnInit {
         Validators.pattern("[0-9]{9}")
       ]),
       'stack_emp': new FormControl(this.empresa.nombre_emp, [
-      ]),
-      'chk_emp': new FormControl(this.empresa.nombre_emp, [
-        Validators.required,
       ])
+     /* 'chk_emp': new FormControl(this.empresa.nombre_emp, [
+        Validators.required,
+      ])*/
     });
   }
   ngOnChanges() {

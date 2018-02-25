@@ -4,15 +4,6 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-.articlejosep {
-    background-color: #073549;
-    font-family: "Roboto", sans-serif;
-    background-image: url('/assets/img/rubia.png');
-}
-
-
-/*UNIFICAR ESTA CLASE*/
-
 .letramarta {
     color: white;
     font-family: "Roboto", sans-serif;
@@ -20,10 +11,6 @@ body {
 
 .formul {
     background-color: white;
-}
-
-footer {
-    background-color: #073549;
 }
 
 .articlemarta {

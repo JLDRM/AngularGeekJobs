@@ -11,24 +11,11 @@ body {
 
 }
 
-
-/*UNIFICAR ESTA CLASE*/
-
-.letramarta {
-    color: white;
-    font-family: "Roboto", sans-serif;
-}
-
 .formul {
     background-color: white;
 }
 
-footer {
-    background-color: #073549;
-}
-
-.articlemarta {
-    background-color: #073549;
+.letramarta {
+    color: white;
     font-family: "Roboto", sans-serif;
-    background-image: url("/assets/img/empresas.png");
 }
