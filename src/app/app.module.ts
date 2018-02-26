@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { HeaderComponent } from './header/header.component';
@@ -45,6 +47,7 @@ import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
+    NgbModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [GeekService],

@@ -1,3 +1,25 @@
+<!-- container con redes sociales  -->
+<!-- <form class="form-horizontal">
+  <div class="container-fluid sociallinks"> -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <a class="btn btn-block btn-social btn-github" href="#">
+          <span class="fa fa-github"></span> Iniciar sesión con GitHub
+        </a>
+        <a class="btn btn-block btn-social btn-linkedin" href="#">
+          <span class="fa fa-linkedin"></span> Iniciar sesión con LinkedIn
+        </a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  <!-- </div>
+</form> -->
+
+
+
+
+
 <section class="container formul rounded-bottom" id="form">
   <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit()" novalidate>
     <a name="loginGeekForm" id="loginGeekForm"></a>
@@ -14,11 +36,11 @@
               </div>
               <input type="email" name="email" class="form-control" id="mail" placeholder="usuario@email.com" formControlName="email_geek">
               <span class="error" aria-live="polite"></span>
-               <!--Span error-->
-               <div *ngIf="loginGeekForm.get('email_geek').invalid && (loginGeekForm.get('email_geek').dirty || loginGeekForm.get('email_geek').touched)"
-               class="alert alert-danger">
-               <span>Login incorrecto</span>
-             </div>
+              <!--Span error-->
+              <div *ngIf="loginGeekForm.get('email_geek').invalid && (loginGeekForm.get('email_geek').dirty || loginGeekForm.get('email_geek').touched)"
+                class="alert alert-danger">
+                <span>Login incorrecto</span>
+              </div>
             </div>
           </div>
           <div class="form-group has-danger">
@@ -29,11 +51,11 @@
               </div>
               <input type="password" name="password" class="form-control" id="pass" formControlName="password_geek">
               <span class="errorp" aria-live="polite"></span>
-               <!--Span error-->
-               <div *ngIf="loginGeekForm.get('password_geek').invalid && (loginGeekForm.get('password_geek').dirty || loginGeekForm.get('password_geek').touched)"
-               class="alert alert-danger">
-               <span>Login incorrecto</span>
-             </div>
+              <!--Span error-->
+              <div *ngIf="loginGeekForm.get('password_geek').invalid && (loginGeekForm.get('password_geek').dirty || loginGeekForm.get('password_geek').touched)"
+                class="alert alert-danger">
+                <span>Login incorrecto</span>
+              </div>
             </div>
           </div>
         </div>
@@ -44,16 +66,16 @@
     <div class="row-fluid formlogin">
       <div class="row">
         <div class="col-md-4"></div>
-          <div class="form-check">
-            <button type="submit" class="btn btn-success" id="bttn">
-              <i class="fa fa-paper-plane-o" style="padding-right: 1em"></i>Entra</button>
-            <label class="form-check-label"></label>
-            <label>
-              <input class="form-check-input" name="remember" type="checkbox">
-              <span style="padding-left: 5em" name="remember" type="checkbox">Recuérdame</span>
-            </label>
-          </div>
+        <div class="form-check">
+          <button type="submit" class="btn btn-success" id="bttn">
+            <i class="fa fa-paper-plane-o" style="padding-right: 1em"></i>Entra</button>
+          <label class="form-check-label"></label>
+          <label>
+            <input class="form-check-input" name="remember" type="checkbox">
+            <span style="padding-left: 5em" name="remember" type="checkbox">Recuérdame</span>
+          </label>
         </div>
       </div>
+    </div>
   </form>
 </section>
