@@ -1,38 +1,29 @@
-input {
-    width: 300px;
+.formLogin {
+    width: 260px;
     height: 30px;
 }
 
-/* botones linkedin */
-.linkedin {
-    background: url("/assets/img/linkedinicon.png") no-repeat;
-    background-position: 18em center;
-    background-size: 40px;
-    background-color: #283E49;
-    color: white;
-    text-align: left;
-    padding-left: 5%;
-    font-size: 10pt;
-    color: white;
-    font-weight: regular;
+/* Botones login centrados */
+.btn-github {
+    width: 260px;
+    margin: auto auto 10px;
+}
+.btn-linkedin {
+    width: 260px;
+    margin: auto auto 10px;
 }
 
-.github {
-    background: url("/assets/img/github_icon.png") no-repeat;
-    background-position: 18em center;
-    background-size: 40px;
-    background-color: #24292D;
-    color: white;
-    text-align: left;
-    padding-left: 5%;
-    font-size: 10pt;
-    color: white;
-    font-weight: regular;
+.form-group {
+    width: 260px;
+    margin: auto auto 10px;
+}
+/* Span de error */
+
+.alert-danger {
+    width: 260px;
 }
 
-
-/* boton de enviar */
-
+/* Login */
 .enviar {
     background-color: #FFF;
     font-size: 10pt;
@@ -71,11 +62,12 @@ input {
 }
 
 .form-check-input {
-    margin-left: 10%;
+    margin-left: 5px;
 }
 
 .form-check {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .formremember a {
