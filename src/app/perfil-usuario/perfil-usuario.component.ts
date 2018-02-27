@@ -33,7 +33,7 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.geekService.getUsuarioFromMocky()
+    this.geekService.getUsuarioFromAPI('0')
       .then(output => this.usuario = output)
       .catch(error => console.log(error));
   }

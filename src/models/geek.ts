@@ -10,7 +10,6 @@ export class Geek {
   experiencia: string;
   formacion: string;
   telefono: string;
-  hobby: string;
   confirmacionpass: string;
   email: string;
   password: string;

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -22,6 +23,7 @@ import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.compo
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
+import { TestGetComponent } from './test-get/test-get.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
     RegistroOfertaComponent,
     PoliticaPrivacidadComponent,
     HomeGeekComponent,
-    HomeEmpresaComponent
+    HomeEmpresaComponent,
+    TestGetComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [GeekService],
   bootstrap: [AppComponent]
