@@ -63,3 +63,28 @@ input {
 .info div {
     display: block;
 }
+
+.titulform {
+    padding-top: 3%;
+    text-align: center;
+    position: relative;
+}
+
+.form-check-input {
+    margin-left: 10%;
+}
+
+.form-check {
+    text-align: center;
+}
+
+.formremember a {
+    text-align: center;
+    font-size: 10pt;
+    padding-bottom: 6%;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
