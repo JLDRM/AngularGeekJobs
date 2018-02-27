@@ -20,19 +20,18 @@ export class FormUsuarioComponent implements OnInit {
   usuario: Geek = {
     nombre: '',
     apellidos: '',
-    fotoPortada:'',
     fotoPerfil: '',
-    fotoCabecera: '',
+    fotoPortada: '',
     descripcion: '',
     habilidadesPrincipales: '',
     habilidades: '',
     portafolio: '',
     experiencia: '',
     formacion: '',
-    email: '',
-    password: '',
-    confirmacionpass: '',
     telefono: '',
+    confirmacionpass: '',
+    email: '',
+    password: ''
   };
 
   constructor(private fb: FormBuilder,
@@ -51,7 +50,7 @@ export class FormUsuarioComponent implements OnInit {
       habilidades: '',
       descripcion: '',
       fotoPerfil: ''
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -98,7 +97,7 @@ export class FormUsuarioComponent implements OnInit {
 
       ])
 
-    })
+    });
   }
 
   onSubmitado(data) {
@@ -111,11 +110,10 @@ export class FormUsuarioComponent implements OnInit {
       console.log(id);
 
     } else {
-      alert('El Formulario contiene errores')
+      alert('El Formulario contiene errores');
     }
 
   }
 
 }
-
 
