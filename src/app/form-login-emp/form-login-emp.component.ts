@@ -37,8 +37,7 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
       ]),
       'password_emp': new FormControl(this.login.password_emp, [
         Validators.required,
-        Validators.minLength(3),
-        Validators.pattern('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$')
+      
       ]),
     });
   }
