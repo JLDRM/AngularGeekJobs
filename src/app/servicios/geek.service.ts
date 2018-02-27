@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Ajax } from './../perfil-usuario/ajax';
 import 'rxjs/add/operator/toPromise';
 
@@ -30,7 +30,7 @@ export class GeekService {
     return res.json();
   }
 
-  postUsuarioFromForm(data){
-    return this.http.post(this.url + "/usuario/registro",data);
+  postUsuarioFromForm(data) {
+    return this.http.post(this.url + 'usuario/registro', data);
   }
 }
