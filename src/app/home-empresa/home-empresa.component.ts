@@ -6,12 +6,13 @@ import * as $ from 'jquery';
   templateUrl: './home-empresa.component.html',
   styleUrls: ['./home-empresa.component.css']
 })
-export class HomeEmpresaComponent implements OnInit {
+export class HomeEmpresaComponent implements OnInit  { 
+
 
   constructor() { }
 
   ngOnInit() {
-    $('button').click(function(e){				
+    $('#scroll').click(function(e){				
       e.preventDefault();		//evitar el eventos del enlace normal
       var strAncla=$(this).attr('href'); //id del ancla
         $('body,html').stop(true,true).animate({				
