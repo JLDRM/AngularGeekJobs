@@ -35,9 +35,7 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
         Validators.email
       ]),
       'password_geek': new FormControl(this.login.password_geek, [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.pattern('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$')
+        Validators.required
       ]),
     });
   }
@@ -48,9 +46,11 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
   onSubmit(dat) {
     let id;
     if (this.loginGeekForm.valid) {
+      console.log(dat)
       this.post.postLoginUsuario(dat).subscribe(x => {
         console.log(x);
         id = x['_id'];
+        
       });
       console.log(id);
       console.log('Bienvenid@ a Geek Jobs');

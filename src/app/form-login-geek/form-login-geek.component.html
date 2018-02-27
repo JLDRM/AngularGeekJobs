@@ -10,7 +10,7 @@
 
 <!-- Inputs login -->
 <section class="container formul rounded-bottom" id="form">
-  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit(loginGeekForm.value)" novalidate>
     <a name="loginGeekForm" id="loginGeekForm"></a>
     <div class="row-fluid formlogin">
       <!-- Inputs centrados -->
