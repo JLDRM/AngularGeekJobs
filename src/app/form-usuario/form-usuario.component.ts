@@ -18,6 +18,7 @@ export class FormUsuarioComponent implements OnInit {
   usuario: Geek = {
     nombre: '',
     apellidos: '',
+    fotoPortada:'',
     fotoPerfil: '',
     descripcion: '',
     habilidadesPrincipales: '',
