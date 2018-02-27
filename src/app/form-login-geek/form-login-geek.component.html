@@ -17,7 +17,7 @@
     </form>  -->
 
 <section class="container formul rounded-bottom" id="form">
-  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit(loginGeekForm.value)" novalidate>
     <a name="loginGeekForm" id="loginGeekForm"></a>
     <div class="row-fluid formlogin">
 
@@ -84,3 +84,5 @@
     </div>
     <!-- </form> -->
     <!-- </section> -->
+
+    <h4>{{loginGeekForm.value|json}}</h4>
