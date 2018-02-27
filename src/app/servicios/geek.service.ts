@@ -8,9 +8,10 @@ import { Geek } from '../../models/geek';
 
 @Injectable()
 export class GeekService {
-  private url = 'http://localhost:8080/';
+  private url = 'http://www.mocky.io/v2/5a8c78043000004c00323f3d';
   usuarios: Geek[];
 
+  // private url = 'http://localhost:8080/';
   constructor(private http: Http) { }
 
   getUsuarioFromMocky(id : string): Promise<Geek[]> {

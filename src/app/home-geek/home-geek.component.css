@@ -18,7 +18,7 @@
 .jumbotron h1 {
     color: white;
     font-weight: 700;
-    font-size: 4em;
+    font-size: 5em;
     margin-top: 120px;
     text-align: center;
 }
@@ -30,6 +30,8 @@
     text-align: center;
 }
 
-.cover-container {
-    position: relative;
+.titulform {
+    padding-top: 3%;
+    text-align: center;
+
 }
