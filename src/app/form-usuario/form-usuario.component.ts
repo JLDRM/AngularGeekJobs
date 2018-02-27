@@ -117,6 +117,3 @@ export class FormUsuarioComponent implements OnInit {
 
 }
 
-class NouUsuari {
-  _id: string;
-}
