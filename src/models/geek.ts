@@ -2,6 +2,7 @@ export class Geek {
   nombre: string;
   apellidos: string;
   fotoPerfil: string;
+  fotoCabecera:string;
   descripcion: string;
   habilidadesPrincipales: string;
   habilidades: string;
@@ -10,7 +11,6 @@ export class Geek {
   formacion: string;
   confirmacionpass: string;
   telefono: string;
-  hobby: string;
   email: string;
   password: string;
 }

@@ -1,0 +1,223 @@
+swagger: '2.0'
+
+info:
+  version: "0.0.1"
+  title: GEEK JOBS open API
+
+paths:
+  /registro:
+    post:
+     description: registro endpoint
+     parameters:
+      -   name: nombre
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: apellido
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: email
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: descripcion
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: habilidades_principales
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: password
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: confi_password
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+      -   name: telefono
+          in: formData
+          description: actualización campo en concreto
+          required: true
+          type: string
+     consumes:
+        -   multipart/form-data
+     responses:
+        200:
+          description: ok
+        400:
+          description: error en la solicitud de actualización (rellenado del formulario)
+  /login:
+    post:
+      description:  login endpoint
+      parameters:
+      -   name: email
+          in: formData
+          description: email con el que el usuario se registro
+          required: true
+          type: string
+      -   name: password
+          in: formData
+          description: password con el que el usuario se registro
+          required: true
+          type: string
+      consumes:
+        -   multipart/form-data
+      responses:
+        200:
+          description: ok
+        400:
+          description: usuario incorrecto
+  /perfil/{id}:
+    get:
+      description:  login endpoint
+      parameters:
+      -   name: id
+          in: path
+          description: id obtenida en la respuesta Ok del Login
+          required: true
+          type: string
+      -   name: email
+          in: formData
+          description: email con el que el usuario se registro
+          required: true
+          type: string
+      -   name: password
+          in: formData
+          description: password con el que el usuario se registro
+          required: true
+          type: string
+      consumes:
+        -   multipart/form-data
+      responses:
+        200:
+          description: ok
+        400:
+          description: usuario incorrecto
+  /update/{id}:
+    put:
+      description:  update endpoint/ El usuario correctamente logeado desde su perfil podrá actualizar toda su información.
+      parameters:
+      -   name: id
+          in: path
+          description: identificador de usuario logeado
+          required: true
+          type: string
+      -   name: nombre
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: apellido
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: descripcion
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: habilidades_principales
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: otras_habilidades
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: portfolio
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: experiencia
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: formacion
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: foto_perfil
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: foto_cabecera
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: password
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: confi_password
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      -   name: telefono
+          in: formData
+          description: actualización campo en concreto
+          required: false
+          type: string
+      consumes:
+        -   multipart/form-data
+      responses:
+        200:
+          description: ok
+        400:
+          description: error en la solicitud de actualización (rellenado del formulario)
+definitions:
+  User:
+    type: object
+    required:
+      - nombre
+      - email
+    properties:
+      idu:
+        type: integer
+      nombre:
+        type: string
+      apellido:
+        type: string
+      email:
+        type: string
+      descripcion:
+        type: string
+      habilidades_principales:
+        type: string
+      otras_habilidades:
+        type: string
+      portfolio:
+        type: string
+      experiencia:
+        type: string
+      formacion:
+        type: string
+      foto_perfil:
+        type: string
+      foto_cabecera:
+        type: string
+      password:
+        type: string
+      confi_password:
+        type: string
+      telefono:
+        type: string

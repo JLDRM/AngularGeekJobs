@@ -1,4 +1,4 @@
-<form [formGroup]="usuarioForm" (ngSubmit)="onSubmitado()" novalidate>
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmitado(usuarioForm.value)" novalidate>
   <div class="form-row pt-5">
     <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12">
       <label for="nombre"></label>Nombre
@@ -80,11 +80,11 @@
 
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
-      <label for="hobby"></label>¿Y tu hobby favorito?
-      <input class="form-control" id="hobby" type="text" placeholder="¿Y tu hobby favorito?" name="hobby" formControlName='hobby'>
-      <div *ngIf="usuarioForm.get('hobby').invalid && (usuarioForm.get('hobby').dirty || usuarioForm.get('hobby').touched)"
+      <label for="descripcion"></label>¿Y tu descripcion?
+      <input class="form-control" id="descripcion" type="text" placeholder="¿Y tu descripcion favorito?" name="descripcion" formControlName='descripcion'>
+      <div *ngIf="usuarioForm.get('descripcion').invalid && (usuarioForm.get('descripcion').dirty || usuarioForm.get('descripcion').touched)"
         class="alert alert-danger">
-        <span>Debes introducir un hobby válido</span>
+        <span>Debes introducir una descripcion válido</span>
       </div>
     </div>
   </div>
@@ -102,3 +102,5 @@
     </div>
   </div>
 </form>
+
+<h4>{{usuarioForm.value|json}}</h4>

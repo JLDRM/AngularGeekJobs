@@ -2,6 +2,8 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { matchOtherValidator } from '../directivas/custom-validator-pass-equal';
 
+import { GeekService } from '../servicios/geek.service';
+
 import { Geek } from '../../models/geek';
 
 
@@ -14,11 +16,12 @@ import { Geek } from '../../models/geek';
 export class FormUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
-  
+
   usuario: Geek = {
     nombre: '',
     apellidos: '',
     fotoPerfil: '',
+    fotoCabecera: '',
     descripcion: '',
     habilidadesPrincipales: '',
     habilidades: '',
@@ -29,10 +32,10 @@ export class FormUsuarioComponent implements OnInit {
     password: '',
     confirmacionpass: '',
     telefono: '',
-    hobby: ''
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private post: GeekService) {
     this.createForm();
   }
 
@@ -45,8 +48,8 @@ export class FormUsuarioComponent implements OnInit {
       confirmacionpass: '',
       telefono: '',
       habilidades: '',
-      hobby: '',
-      cv: ''
+      descripcion: '',
+      fotoPerfil: ''
     })
   }
 
@@ -88,7 +91,7 @@ export class FormUsuarioComponent implements OnInit {
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
 
       ]),
-      'hobby': new FormControl(this.usuario.hobby, [
+      'descripcion': new FormControl(this.usuario.descripcion, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
 
@@ -97,14 +100,23 @@ export class FormUsuarioComponent implements OnInit {
     })
   }
 
-  onSubmitado(){
-    if(this.usuarioForm.valid){
-      console.log('consuelo log');
+  onSubmitado(data) {
+    let id;
+    if (this.usuarioForm.valid) {
+      this.post.postUsuarioFromForm(data).subscribe(x => {
+        console.log(x);
+        id = x['_id'];
+      });
+      console.log(id);
 
-    }else{
+    } else {
       alert('El Formulario contiene errores')
     }
-    
+
   }
 
+}
+
+class NouUsuari{
+  _id:string;
 }
