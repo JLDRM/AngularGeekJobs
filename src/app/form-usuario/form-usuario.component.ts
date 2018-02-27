@@ -42,7 +42,7 @@ export class FormUsuarioComponent implements OnInit {
   createForm() {
     this.usuarioForm = this.fb.group({
       nombre: '',
-      apellido: '',
+      apellidos: '',
       email: '',
       password: '',
       confirmacionpass: '',
@@ -60,7 +60,7 @@ export class FormUsuarioComponent implements OnInit {
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
 
       ]),
-      'apellido': new FormControl(this.usuario.apellidos, [
+      'apellidos': new FormControl(this.usuario.apellidos, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
 
