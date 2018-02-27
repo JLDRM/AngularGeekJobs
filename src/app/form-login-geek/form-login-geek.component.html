@@ -10,7 +10,7 @@
 
 <!-- Inputs login -->
 <section class="container formul rounded-bottom" id="form">
-  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="loginGeekForm" (ngSubmit)="onSubmit(loginGeekForm.value)" novalidate>
     <a name="loginGeekForm" id="loginGeekForm"></a>
     <div class="row-fluid formlogin">
       <!-- Inputs centrados -->
@@ -62,5 +62,12 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <!-- </form> -->
+    <!-- </section> -->
+
+    <h4>{{loginGeekForm.value|json}}</h4>
+=======
   </form>
 </section>
+>>>>>>> 43ab06658816eda84e9d446282b6d56d4cfd3e99
