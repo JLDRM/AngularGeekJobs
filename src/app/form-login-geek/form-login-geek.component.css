@@ -1,0 +1,90 @@
+input {
+    width: 300px;
+    height: 30px;
+}
+
+/* botones linkedin */
+.linkedin {
+    background: url("/assets/img/linkedinicon.png") no-repeat;
+    background-position: 18em center;
+    background-size: 40px;
+    background-color: #283E49;
+    color: white;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 10pt;
+    color: white;
+    font-weight: regular;
+}
+
+.github {
+    background: url("/assets/img/github_icon.png") no-repeat;
+    background-position: 18em center;
+    background-size: 40px;
+    background-color: #24292D;
+    color: white;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 10pt;
+    color: white;
+    font-weight: regular;
+}
+
+
+/* boton de enviar */
+
+.enviar {
+    background-color: #FFF;
+    font-size: 10pt;
+    font-weight: regular;
+    color: #009EE3;
+}
+
+.enviar:hover {
+    background-color: #009EE3;
+    color: white;
+}
+
+.navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.enviar:active {
+    background-color: #009EE3;
+    color: #fff;
+}
+
+.navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.info div {
+    display: block;
+}
+
+.titulform {
+    padding-top: 3%;
+    text-align: center;
+    position: relative;
+}
+
+.form-check-input {
+    margin-left: 10%;
+}
+
+.form-check {
+    text-align: center;
+}
+
+.formremember a {
+    text-align: center;
+    font-size: 10pt;
+    padding-bottom: 6%;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
