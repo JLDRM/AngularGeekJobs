@@ -30,15 +30,12 @@ export class GeekService {
     return res.json();
   }
 
-<<<<<<< HEAD
-  postUsuarioFromForm(data){
-    return this.http.post(this.url + "usuario/registro",data);
-  }
-  postLoginUsuario(dat){
-    return this.http.post(this.url + "usuario/login", dat);
-=======
+
   postUsuarioFromForm(data) {
-    return this.http.post(this.url + 'usuario/registro', data);
->>>>>>> 791449104cf7e8dbb38933a4bf9cc4141ca6a837
+    return this.http.post(this.url + "usuario/registro", data);
+  }
+  postLoginUsuario(dat) {
+    return this.http.post(this.url + "usuario/login", dat);
+
   }
 }
