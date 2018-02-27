@@ -6,7 +6,6 @@ import { GeekService } from '../servicios/geek.service';
 
 import { Geek } from '../../models/geek';
 
-
 @Component({
   selector: 'app-form-usuario',
   templateUrl: './form-usuario.component.html',
@@ -34,8 +33,7 @@ export class FormUsuarioComponent implements OnInit {
     password: ''
   };
 
-  constructor(private fb: FormBuilder,
-    private post: GeekService) {
+  constructor(private fb: FormBuilder, private post: GeekService) {
     this.createForm();
   }
 
