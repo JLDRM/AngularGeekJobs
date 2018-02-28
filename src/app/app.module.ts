@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -52,6 +53,7 @@ import { FormPerfilUsuarioComponent } from './form-perfil-usuario/form-perfil-us
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    ModalModule.forRoot(),
     HttpClientModule
   ],
   providers: [GeekService, EmpresaService],
