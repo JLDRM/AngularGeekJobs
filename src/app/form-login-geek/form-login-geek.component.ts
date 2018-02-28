@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginGeek } from '../../models/loginGeek';
 import { GeekService } from '../servicios/geek.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-login-geek',
@@ -16,7 +17,7 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
     password_geek: ''
   };
 
-  constructor(private fb: FormBuilder, private post: GeekService) {
+  constructor(private fb: FormBuilder, private post: GeekService, private router: Router) {
     this.createForm();
   }
 
@@ -46,16 +47,21 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
   onSubmit(dat) {
     let id;
     if (this.loginGeekForm.valid) {
-      console.log(dat)
+      console.log(dat);
       this.post.postLoginUsuario(dat).subscribe(x => {
         console.log(x);
-        id = x['_id'];
-        
+        id = x['_body'];
+
+        // localStorage para guardar id de Usuario
+        if (window.localStorage) {
+          localStorage.setItem('idUsuario', id);
+        }
+        this.router.navigateByUrl('perfil-usuario');
       });
       console.log(id);
       console.log('Bienvenid@ a Geek Jobs');
     } else {
-      alert('Lo sentimos, se ha producido un error')
+      alert('Lo sentimos, se ha producido un error');
     }
 
   }
