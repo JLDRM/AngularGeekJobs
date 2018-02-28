@@ -1,6 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { matchOtherValidator } from '../directivas/custom-validator-pass-equal';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
+
 
 import { GeekService } from '../servicios/geek.service';
 
@@ -13,6 +18,12 @@ import { Geek } from '../../models/geek';
 })
 
 export class FormUsuarioComponent implements OnInit {
+
+  modalRef: BsModalRef;
+
+  @ViewChild('ok') ok: any;
+  @ViewChild('fail') fail: any;
+
 
   usuarioForm: FormGroup;
 
@@ -33,7 +44,10 @@ export class FormUsuarioComponent implements OnInit {
     password: ''
   };
 
-  constructor(private fb: FormBuilder, private post: GeekService) {
+  constructor(private fb: FormBuilder, private post: GeekService, private modalService: BsModalService,
+     private router: Router) {
+
+
     this.createForm();
   }
 
@@ -98,16 +112,32 @@ export class FormUsuarioComponent implements OnInit {
     });
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  nosVamos() {
+    console.log('hola');
+    this.router.navigateByUrl('login-geek');
+  }
+
   onSubmitado(data) {
-    let id;
     if (this.usuarioForm.valid) {
-      this.post.postUsuarioFromForm(data).subscribe(x => {
-        console.log(x);
-        id = x['_id'];
+      this.post.postUsuarioFromForm(data).subscribe(response => {
+        if (response.status === 200) {
+          this.openModal(this.ok);
+        } else {
+          this.openModal(this.fail);
+        }
+
+        console.log(response);
+        response.json();
+        console.log(response.json());
+
       });
-      console.log(id);
 
     } else {
+
       alert('El Formulario contiene errores');
     }
 
