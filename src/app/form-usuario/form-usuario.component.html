@@ -49,7 +49,8 @@
       <div *ngIf="usuarioForm.get('confirmacionpass').invalid && (usuarioForm.get('confirmacionpass').dirty || usuarioForm.get('confirmacionpass').touched)"
         class="alert alert-danger">
         <span>Debes introducir una confirmacion de contraseña válida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter
-          Especial)</span>
+          Especial)
+        </span>
         <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">== Las contraseñas deben ser iguales</span>
       </div>
     </div>
@@ -103,4 +104,30 @@
   </div>
 </form>
 
-<h4>{{usuarioForm.value|json}}</h4>
+<!-- ========== MODAL DE OK ========== -->
+
+<ng-template #ok bsModal #staticModal="bs-modal" (onHidden)="nosVamos()">
+  <div class="modal-header">
+    <h4 class="modal-title">Felicidades!! Has sido registrado correctamente!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      
+  </div>
+  <div class="modal-body">
+    Ve a probar si ya te puedes logear con tu email y contraseña!!
+  </div>
+<!-- ========== ========== ========== -->
+
+</ng-template>
+<ng-template #fail>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Error de conexión!! Vuelva a probarlo más tarde</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>

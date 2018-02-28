@@ -8,45 +8,42 @@ import { Oferta } from '../../models/oferta';
   styleUrls: ['./form-altaoferta.component.css']
 })
 
-
 export class FormAltaofertaComponent implements OnInit {
-
-altaofertaForm: FormGroup;
-
-oferta: Oferta = {
-  position: "",
-    jobDescription:"",
-    training:"",
-    location:"",
-    experience:"",
-    salary:"",
-    remote:"",
-    languajes:"",
-    sskills:"",
-    hskills:"",
-}
+  altaofertaForm: FormGroup;
+  oferta: Oferta = {
+    position: "",
+    jobDescription: "",
+    training: "",
+    location: "",
+    experience: "",
+    salary: "",
+    remote: "",
+    languajes: "",
+    sskills: "",
+    hskills: "",
+  }
 
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
-createForm() {
-  this.altaofertaForm = this.fb.group ({
-  position:['', Validators.required],
-  jobDescription:['', Validators.required],
-  training:['', Validators.required],
-  location:['', Validators.required],
-  experience:['', Validators.required],
-  salary:['', Validators.required],
-  remote:['', Validators.required],
-  languajes:['', Validators.required],
-  sskills:['', Validators.required],
-  hskills:['', Validators.required],
-  
-})
-}
+
+  createForm() {
+    this.altaofertaForm = this.fb.group({
+      position: ['', Validators.required],
+      jobDescription: ['', Validators.required],
+      training: ['', Validators.required],
+      location: ['', Validators.required],
+      experience: ['', Validators.required],
+      salary: ['', Validators.required],
+      remote: ['', Validators.required],
+      languajes: ['', Validators.required],
+      sskills: ['', Validators.required],
+      hskills: ['', Validators.required],
+
+    })
+  }
 
   ngOnInit(): void {
-
     this.altaofertaForm = new FormGroup({
       'position': new FormControl(this.oferta.position, [
         Validators.required,
@@ -68,13 +65,10 @@ createForm() {
         Validators.pattern("[a-zA-ZáéíóúÁÉÍÓÚ ]+")
       ]),
       'experience': new FormControl(this.oferta.experience, [
-      
       ]),
       'salary': new FormControl(this.oferta.salary, [
-    
       ]),
       'remote': new FormControl(this.oferta.remote, [
-     
       ]),
       'languajes': new FormControl(this.oferta.languajes, [
         Validators.required,
@@ -92,18 +86,15 @@ createForm() {
         Validators.pattern("^[A-Za-z0-9,\. ]{3,50}$")
       ]),
     })
-   
   }
   ngOnChanges() {
   }
 
-  onSubmit(){
-    if(this.altaofertaForm.valid){
+  onSubmit() {
+    if (this.altaofertaForm.valid) {
       console.log('La oferta se ha publicado correctamente');
-
-    }else{
+    } else {
       alert('Lo sentimos, se ha producido un error')
     }
-    
   }
 }

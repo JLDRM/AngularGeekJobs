@@ -1,6 +1,10 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { matchOtherValidator } from '../directivas/custom-validator-pass-equal';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 import { GeekService } from '../servicios/geek.service';
 
@@ -13,9 +17,10 @@ import { Geek } from '../../models/geek';
 })
 
 export class FormUsuarioComponent implements OnInit {
-
+  modalRef: BsModalRef;
+  @ViewChild('ok') ok: any;
+  @ViewChild('fail') fail: any;
   usuarioForm: FormGroup;
-
   usuario: Geek = {
     nombre: '',
     apellidos: '',
@@ -33,7 +38,8 @@ export class FormUsuarioComponent implements OnInit {
     password: ''
   };
 
-  constructor(private fb: FormBuilder, private post: GeekService) {
+  constructor(private fb: FormBuilder, private post: GeekService,
+    private modalService: BsModalService, private router: Router) {
     this.createForm();
   }
 
@@ -56,62 +62,63 @@ export class FormUsuarioComponent implements OnInit {
       'nombre': new FormControl(this.usuario.nombre, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'apellidos': new FormControl(this.usuario.apellidos, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'email': new FormControl(this.usuario.email, [
         Validators.required,
         Validators.email
-
       ]),
       'password': new FormControl(this.usuario.password, [
         Validators.required,
         Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
-
       ]),
       'confirmacionpass': new FormControl(this.usuario.confirmacionpass, [
         Validators.required,
         Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$'),
         matchOtherValidator('password')
-
       ]),
       'telefono': new FormControl(this.usuario.telefono, [
         Validators.required,
         Validators.pattern('[0-9]{9}')
-
       ]),
       'habilidades': new FormControl(this.usuario.habilidades, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'descripcion': new FormControl(this.usuario.descripcion, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ])
-
     });
   }
 
-  onSubmitado(data) {
-    let id;
-    if (this.usuarioForm.valid) {
-      this.post.postUsuarioFromForm(data).subscribe(x => {
-        console.log(x);
-        id = x['_id'];
-      });
-      console.log(id);
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
+  nosVamos() {
+    console.log('hola');
+    this.router.navigateByUrl('login-geek');
+  }
+
+  onSubmitado(data) {
+    if (this.usuarioForm.valid) {
+      this.post.postUsuarioFromForm(data).subscribe(response => {
+        if (response.status === 200) {
+          this.openModal(this.ok);
+        } else {
+          this.openModal(this.fail);
+        }
+
+        console.log(response);
+        response.json();
+        console.log(response.json());
+      });
     } else {
       alert('El Formulario contiene errores');
     }
-
   }
-
 }
-

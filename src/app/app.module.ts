@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -25,6 +26,7 @@ import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { TestGetComponent } from './test-get/test-get.component';
 import { EmpresaService } from './servicios/empresa.service';
+import { FormPerfilUsuarioComponent } from './form-perfil-usuario/form-perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +45,15 @@ import { EmpresaService } from './servicios/empresa.service';
     PoliticaPrivacidadComponent,
     HomeGeekComponent,
     HomeEmpresaComponent,
-    TestGetComponent
+    TestGetComponent,
+    FormPerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    ModalModule.forRoot(),
     HttpClientModule
   ],
   providers: [GeekService, EmpresaService],
