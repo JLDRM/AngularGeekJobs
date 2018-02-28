@@ -24,6 +24,7 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
 import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { TestGetComponent } from './test-get/test-get.component';
+import { EmpresaService } from './servicios/empresa.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { TestGetComponent } from './test-get/test-get.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [GeekService],
+  providers: [GeekService, EmpresaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
