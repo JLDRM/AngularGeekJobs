@@ -1,6 +1,6 @@
   <!-- Inputs login -->
   <section class="container formul rounded-bottom" id="form">
-      <form [formGroup]="loginEmpForm" (ngSubmit)="onSubmit()" novalidate>
+      <form [formGroup]="loginEmpForm" (ngSubmit)="onSubmit(loginEmpForm.value)" novalidate>
         <a name="loginEmpForm" id="loginEmpForm"></a>
       <div class="row-fluid formlogin">
         <!-- Inputs centrados -->
