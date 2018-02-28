@@ -10,9 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./form-login-emp.component.css']
 })
 export class FormLoginEmpComponent implements OnInit, OnChanges {
-
   loginEmpForm: FormGroup;
-
   login: LoginEmp = {
     email_emp: '',
     password_emp: ''
@@ -30,7 +28,6 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-
     this.loginEmpForm = new FormGroup({
       'email_emp': new FormControl(this.login.email_emp, [
         Validators.required,
@@ -39,7 +36,6 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
       ]),
       'password_emp': new FormControl(this.login.password_emp, [
         Validators.required,
-
       ]),
     });
   }
@@ -57,11 +53,9 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
       });
       console.log(id);
       console.log('Bienvenid@ a Geek Empresas');
-
     } else {
       alert('Lo sentimos, se ha producido un error')
     }
-
   }
 }
 

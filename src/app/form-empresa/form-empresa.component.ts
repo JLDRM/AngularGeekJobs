@@ -98,11 +98,8 @@ export class FormEmpresaComponent implements OnInit {
       });
       console.log(id);
       console.log('Registrado correctamente');
-
     } else {
       alert('Lo sentimos, se ha producido un error')
     }
-
   }
-
 }

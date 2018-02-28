@@ -17,8 +17,6 @@ export class HomeGeekComponent implements OnInit {
       $('body,html').stop(true, true).animate({
         scrollTop: $(strAncla).offset().top
       }, 1000);
-
     });
   }
-
 }
