@@ -46,9 +46,15 @@
           <span>Este campo no puede contener números ni carácteres especiales</span>
         </div>
         <label>Años de experiencia</label>
-        <input type="range" class="form-control" required name="experience" id="experiencia">
-        <label>Salario</label>
-        <input type="range" class="form-control" required name="salary" min="20000" max="60000" id="salario">
+        <div>
+            <input type="range" id="rangeInput2" name="rangeInput2" min="0" max="15" value="2"oninput="amount2.value=rangeInput2.value">                                                       
+            <output name="amount2" id="amount2" for="rangeInput2">2</output></div>
+
+        <label>Salario Bruto Anual en Euros</label>
+        <div>
+        <input type="range" id="rangeInput" name="rangeInput" min="20000" max="100000" value="20000"oninput="amount.value=rangeInput.value">                                                       
+        <output name="amount" id="amount" for="rangeInput">20000</output></div>
+      
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
@@ -91,4 +97,8 @@
     </div>
 
   </form>
+
+
 </section>
+
+

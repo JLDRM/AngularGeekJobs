@@ -33,7 +33,12 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.geekService.getUsuarioFromAPI('0')
+let idUsuario = localStorage.getItem('idUsuario');
+    //let idUsuario = window.localStorage.idUsuario; //5a96a6f2a2cd8322a231f572
+console.log('UUUUUUUUUUU ',idUsuario);
+idUsuario
+    // id de prueba: '5a9580dc8d19b8394d3273ca'
+    this.geekService.getUsuarioFromAPI('5a96a92bfa2e4724fcb709ab')
       .then(output => this.usuario = output)
       .catch(error => console.log(error));
   }

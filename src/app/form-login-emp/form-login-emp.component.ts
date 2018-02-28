@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginEmp } from '../../models/loginEmp';
+import { EmpresaService } from '../servicios/empresa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-login-emp',
@@ -16,7 +18,7 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
     password_emp: ''
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private post: EmpresaService, private router: Router) {
     this.createForm();
   }
 
@@ -37,15 +39,23 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
       ]),
       'password_emp': new FormControl(this.login.password_emp, [
         Validators.required,
-      
+
       ]),
     });
   }
 
   ngOnChanges() { }
 
-  onSubmit() {
+  onSubmit(data) {
+    let id;
     if (this.loginEmpForm.valid) {
+      console.log(data)
+      this.post.postLoginEmpresa(data).subscribe(x => {
+        console.log(x);
+        id = x['_id'];
+        this.router.navigateByUrl('form-oferta');
+      });
+      console.log(id);
       console.log('Bienvenid@ a Geek Empresas');
 
     } else {

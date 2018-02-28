@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Empresa } from '../../models/empresa';
-
+import { EmpresaService } from '../servicios/empresa.service';
 
 @Component({
   selector: 'app-form-empresa',
@@ -15,15 +15,15 @@ export class FormEmpresaComponent implements OnInit {
     apellido_emp: '',
     email_emp: '',
     password_emp: '',
-    cpassword_emp: '', 
-    empresa_emp: '', 
+    cpassword_emp: '',
+    empresa_emp: '',
     nif_emp: '',
-    telefono_emp: 123456789, 
+    telefono_emp: 123456789,
     stack_emp: []
     //chk_emp: ''
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private post: EmpresaService) {
     this.createForm();
   }
   createForm() {
@@ -32,10 +32,10 @@ export class FormEmpresaComponent implements OnInit {
       apellido_emp: '',
       email_emp: '',
       password_emp: '',
-      cpassword_emp: '', 
-      empresa_emp: '', 
+      cpassword_emp: '',
+      empresa_emp: '',
       nif_emp: '',
-      telefono_emp: '', 
+      telefono_emp: '',
       stack_emp: []
       //chk_emp: ''
     })
@@ -81,22 +81,28 @@ export class FormEmpresaComponent implements OnInit {
       ]),
       'stack_emp': new FormControl(this.empresa.nombre_emp, [
       ])
-     /* 'chk_emp': new FormControl(this.empresa.nombre_emp, [
-        Validators.required,
-      ])*/
+      /* 'chk_emp': new FormControl(this.empresa.nombre_emp, [
+         Validators.required,
+       ])*/
     });
   }
   ngOnChanges() {
   }
 
-  onSubmit(){
-    if(this.empresaForm.valid){
+  onSubmit(dta) {
+    let id;
+    if (this.empresaForm.valid) {
+      this.post.postEmpresaForm(dta).subscribe(x => {
+        console.log(x);
+        id = x['_id'];
+      });
+      console.log(id);
       console.log('Registrado correctamente');
 
-    }else{
+    } else {
       alert('Lo sentimos, se ha producido un error')
     }
-    
+
   }
 
 }
