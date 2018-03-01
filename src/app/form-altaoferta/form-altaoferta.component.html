@@ -38,11 +38,9 @@ $( function() {
         </div>
       </div>
     </div>
-
     <div class="form-row">
       <label for="inputDescripcion">Job description</label>
     </div>
-
     <div class="form-row">
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
         <textarea class="form-control" id="jobDescription" class="form-control" name="jobdescription" required maxlength="300" placeholder="Ayuda a los candidatos a entender tus necesidades"
@@ -53,9 +51,6 @@ $( function() {
           <span>Este campo es obligatorio</span>
         </div>
       </div>
-
-
-
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
         <label>Formación</label>
         <input type="text" class="form-control" required name="training" id="formacion" placeholder="Formación" formControlName="training">
@@ -73,22 +68,19 @@ $( function() {
         </div>
         <label>Años de experiencia</label>
         <div>
-            <input type="range" id="rangeInput2" name="rangeInput2" min="0" max="15" value="2"oninput="amount2.value=rangeInput2.value">                                                       
-            <output name="amount2" id="amount2" for="rangeInput2">2</output></div>
-            <div id="slider">
-              <div id="custom-handle" class="ui-slider-handle"></div>
-            </div>
+          <input type="range" id="rangeInput2" name="rangeInput2" min="0" max="15" value="2" oninput="amount2.value=rangeInput2.value">
+          <output name="amount2" id="amount2" for="rangeInput2">2</output>
+        </div>
         <label>Salario Bruto Anual en Euros</label>
         <div>
-        <input type="range" id="rangeInput" name="rangeInput" min="20000" max="100000" value="20000"oninput="amount.value=rangeInput.value">                                                       
-        <output name="amount" id="amount" for="rangeInput">20000</output></div>
-      
+          <input type="range" id="rangeInput" name="rangeInput" min="20000" max="100000" value="20000" oninput="amount.value=rangeInput.value">
+          <output name="amount" id="amount" for="rangeInput">20000</output>
+        </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
             Trabajo Remoto
           </label>
-
         </div>
       </div>
     </div>
@@ -119,14 +111,8 @@ $( function() {
         </div>
       </div>
     </div>
-
     <div class="row justify-content-center mb-4">
       <button type="submit" class="btn btn-primary">Publicar</button>
     </div>
-
   </form>
-
-
 </section>
-
-

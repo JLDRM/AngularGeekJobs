@@ -1,90 +1,90 @@
 footer {
-    background-color: #073549;
+  background-color: #073549;
 }
 
 #gjFooter {
-    color: white;
+  color: white;
 }
 
 #gjFooter .footer-copyright {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 #gjFooter .footer-copyright p {
-    margin: 10px;
-    color: #ccc;
+  margin: 10px;
+  color: #ccc;
 }
 
 #gjFooter ul {
-    list-style-type: none;
-    padding-left: 0;
-    line-height: 1.7;
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.7;
 }
 
 #gjFooter h5 {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    margin-top: 30px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-top: 30px;
 }
 
 #gjFooter a {
-    color: #d2d1d1;
-    text-decoration: none;
+  color: #d2d1d1;
+  text-decoration: none;
 }
 
 #gjFooter a:hover,
 #gjFooter a:focus {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 #gjFooter .social-networks {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 16px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 16px;
 }
 
 #gjFooter .social-networks a {
-    font-size: 32px;
-    color: #f9f9f9;
-    padding: 10px;
-    transition: 0.2s;
+  font-size: 32px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
 }
 
 #gjFooter .social-networks a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #gjFooter .facebook:hover {
-    color: #0077e2;
+  color: #0077e2;
 }
 
 #gjFooter .google:hover {
-    color: #ef1a1a;
+  color: #ef1a1a;
 }
 
 #gjFooter .twitter:hover {
-    color: #00aced;
+  color: #00aced;
 }
 
 #gjFooter .btn {
-    color: white;
-    background-color: #4aadd4;
-    /* #d84b6b */
-    border-radius: 20px;
-    border: none;
-    width: 150px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    line-height: 25px;
+  color: white;
+  background-color: #4aadd4;
+  /* #d84b6b */
+  border-radius: 20px;
+  border: none;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  line-height: 25px;
 }
 
 @media screen and (max-width: 767px) {
-    #gjFooter {
-        text-align: center;
-    }
+  #gjFooter {
+    text-align: center;
+  }
 }

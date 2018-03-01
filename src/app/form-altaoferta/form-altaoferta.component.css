@@ -1,39 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
-
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgba(226, 226, 226, .84);
-    font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(226, 226, 226, .84);
+  font-family: "Roboto", sans-serif;
 }
 
 header {
-    display: flex;
-    background: #073549;
+  display: flex;
+  background: #073549;
 }
 
 #tituloJoan {
-    background-image: url();
-    color: white;
-    background-repeat: no-repeat;
+  background-image: url();
+  color: white;
+  background-repeat: no-repeat;
 }
 
 #dorm {
-    color: white;
+  color: white;
 }
 
 #jobDescription {
-    height: 300px;
+  height: 300px;
 }
 
 #form {
-    background-color: white;
+  background-color: white;
 }
 
 .form-row mt-5 {
-    background-color: white;
+  background-color: white;
 }
 
 label.error {
-    color: red;
+  color: red;
 }
