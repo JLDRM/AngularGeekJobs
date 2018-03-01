@@ -15,7 +15,6 @@ section {
     border-radius: 6px;
 }
 
-
 /* ===================================================
 BANNER DE PERFIL / FOTO DE PERFIL
 =================================================== */
@@ -67,8 +66,6 @@ BANNER DE PERFIL / FOTO DE PERFIL
     color: white;
     text-decoration: none;
 }
-
-
 /* =================================================== */
 
 #cont {
@@ -78,48 +75,6 @@ BANNER DE PERFIL / FOTO DE PERFIL
 
 #cont div {
     margin-top: 10px;
-}
-
-#contact {
-    padding: 30px 10px;
-    margin: 40px auto;
-}
-
-#contact h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-#contact label {
-    width: 90%;
-    display: block;
-    padding: 5px;
-    margin-top: 10px;
-}
-
-#contact input {
-    width: 90%;
-    display: block;
-    padding: 5px;
-    /*&[type="submit"]:hover {
-        box-shadow: 1px 2px 10px 0px rgba(3,168,244,0.75);
-    }*/
-}
-
-#contact input[type="submit"] {
-    width: 45%;
-    padding: 10px;
-    background: #03A9F4;
-    border: 0 solid transparent;
-    margin-top: 15px;
-    font-size: 1.2em;
-    color: white;
-    border-radius: 25px;
-}
-
-#contact textarea {
-    width: 90%;
-    padding: 5px;
 }
 
 @media (max-width: 576px) {
