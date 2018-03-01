@@ -19,7 +19,7 @@
 
     <div class="form-row">
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
-        <textarea class="form-control" id="jobDescription" class="form-control" name="jobdescription" required maxlength="300" placeholder="Ayuda a los candidatos a entender tus necesidades"
+        <textarea class="form-control" [ngModel]="oferta.jobDescription" id="jobDescription" class="form-control" name="jobdescription" required maxlength="300" placeholder="Ayuda a los candidatos a entender tus necesidades"
           formControlName="jobDescription"> </textarea>
         <!--Span error-->
         <div *ngIf="altaofertaForm.get('jobDescription').invalid && (altaofertaForm.get('jobDescription').dirty || altaofertaForm.get('jobDescription').touched)"
@@ -97,7 +97,6 @@
 </section>
 
 <!-- ========== MODAL BADFILL ========== -->
-  
 <ng-template #badFill>
     <div class="modal-header">
       <h4 class="modal-title pull-left">¡El Formulario contiene errores!</h4>

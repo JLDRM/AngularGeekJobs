@@ -19,7 +19,8 @@ export class FormAltaofertaComponent implements OnInit {
   altaofertaForm: FormGroup;
   oferta: Oferta = {
     position: "",
-    jobDescription: "",
+    jobDescription:'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Laborum modi in tenetur velit, ducimus aut similique? Pariatur dolorum excepturi,obcaecati ut quam illum, commodi repellat velit reprehenderit neque omnis dolor, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum modi in tenetur velit, ducimus aut similique? Pariatur dolorum excepturi, obcaecati ut quam illum, commodi repellat velit reprehenderit neque omnis dolor',
+
     training: "",
     location: "",
     experience: "",
