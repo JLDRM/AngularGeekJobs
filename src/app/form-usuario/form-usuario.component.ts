@@ -23,25 +23,27 @@ export class FormUsuarioComponent implements OnInit {
 
   @ViewChild('ok') ok: any;
   @ViewChild('fail') fail: any;
+  @ViewChild(ModalDirective) modal: ModalDirective;
+  messages: string[];
 
 
   usuarioForm: FormGroup;
 
   usuario: Geek = {
-    nombre: '',
-    apellidos: '',
+    nombre: 'Josep',
+    apellidos: 'Lopez',
     fotoPerfil: '',
     fotoPortada: '',
-    descripcion: '',
+    descripcion: 'Jooooo',
     habilidadesPrincipales: '',
-    habilidades: '',
+    habilidades: 'Tuuuu',
     portafolio: '',
     experiencia: '',
     formacion: '',
-    telefono: '',
-    confirmacionpass: '',
-    email: '',
-    password: ''
+    telefono: '679032345',
+    confirmacionpass: 'Nojodas4!',
+    email: 'jldr244@gmail.com',
+    password: 'Nojodas4!'
   };
 
   constructor(private fb: FormBuilder, private post: GeekService, private modalService: BsModalService,
@@ -126,6 +128,7 @@ export class FormUsuarioComponent implements OnInit {
       this.post.postUsuarioFromForm(data).subscribe(response => {
         if (response.status === 200) {
           this.openModal(this.ok);
+          this.nosVamos();
         } else {
           this.openModal(this.fail);
         }
