@@ -20,13 +20,11 @@ export class FormUsuarioComponent implements OnInit {
   modalRef: BsModalRef;
   @ViewChild('ok') ok: any;
   @ViewChild('fail') fail: any;
-<<<<<<< HEAD
+
   @ViewChild(ModalDirective) modal: ModalDirective;
   messages: string[];
 
 
-=======
->>>>>>> 9f64d6407b1d4d54d853371147e9d0f16dfa4c85
   usuarioForm: FormGroup;
   usuario: Geek = {
     nombre: 'Josep',
