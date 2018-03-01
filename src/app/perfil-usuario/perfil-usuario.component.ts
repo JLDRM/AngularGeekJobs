@@ -38,6 +38,5 @@ export class PerfilUsuarioComponent implements OnInit {
     this.geekService.getUsuarioFromAPI('5a96a92bfa2e4724fcb709ab')
       .then(output => this.usuario = output)
       .catch(error => console.log(error));
-    this.fotoPerfil = '/assets/img/persona.png';
   }
 }

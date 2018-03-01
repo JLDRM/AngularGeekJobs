@@ -1,6 +1,6 @@
 # GeekJobs
 
-GeekJobs es un portal de empleo para perfiles tecnológicos construido con el framework Angular 4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
 ## Development server
 

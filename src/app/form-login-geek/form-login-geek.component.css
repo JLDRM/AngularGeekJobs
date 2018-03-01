@@ -1,36 +1,28 @@
 /* Botones login centrados */
-
 .btn-github {
-  width: 260px;
-  margin: auto auto 10px;
+    width: 260px;
+    margin: auto auto 10px;
 }
-
 .btn-linkedin {
-  width: 260px;
-  margin: auto auto 10px;
+    width: 260px;
+    margin: auto auto 10px;
 }
-
 .form-group {
-  width: 290px;
-  margin: auto auto 10px;
+    width: 290px;
+    margin: auto auto 10px;
 }
-
 /* Span de error */
-
 .alert-danger {
-  width: 212px;
+    width: 212px;
 }
-
 .form-check-input {
-  margin-left: 5px;
+    margin-left: 5px;
 }
-
 .form-check {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
-
 .row {
-  margin-right: 0;
-  margin-left: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
