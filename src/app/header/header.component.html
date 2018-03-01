@@ -1,45 +1,37 @@
-<!-- empieza navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top nanvbar-custom" id="menu">
-  <!-- contenedor con el logo -->
-  <a class="navbar-brand" routerLink="/login-geek">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <!-- dropdown de HOME -->
-      <li class="dropdown" class="nav-item active">
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="">
-          Home
-        </a>
-        <ul class="dropdown-menu" id="menuhome">
-          <li>
-            <a routerLink="/login-geek">Home Usuario</a>
-          </li>
-          <li>
-            <a routerLink="/login-emp">Home Empresa</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="">Regístrate</a>
-        <ul class="dropdown-menu" id="menuhome">
-          <li>
-            <a routerLink="/form-usuario">Registro Usuario</a>
-          </li>
-          <li>
-            <a routerLink="/form-empresa">Registro Empresa</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">Sobre Nosotros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">Contacto</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div>
+  
+  <!-- empieza navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top nanvbar-custom" id="menu">
+    <!-- contenedor con el logo -->
+    <a class="navbar-brand" routerLink="/login-geek">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <!-- dropdown de HOME -->
+        <li class="dropdown" class="nav-item">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" data-target=".navbar-collapse">
+            Home
+          </a>
+          <ul class="dropdown-menu" id="menuhome">
+            <li>
+              <a routerLink="/login-geek">Home Usuario</a>
+            </li>
+            <li>
+              <a routerLink="/login-emp">Home Empresa</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" data-toggle="dropdown" data-target=".navbar-collapse">Sobre Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" >Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
