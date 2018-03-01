@@ -24,7 +24,6 @@ import { RegistroOfertaComponent } from './registro-oferta/registro-oferta.compo
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
-import { TestGetComponent } from './test-get/test-get.component';
 import { EmpresaService } from './servicios/empresa.service';
 import { FormPerfilUsuarioComponent } from './form-perfil-usuario/form-perfil-usuario.component';
 import { PaginaConstruccionComponent } from './pagina-construccion/pagina-construccion.component';
@@ -47,7 +46,6 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
     PoliticaPrivacidadComponent,
     HomeGeekComponent,
     HomeEmpresaComponent,
-    TestGetComponent,
     FormPerfilUsuarioComponent,
     PaginaConstruccionComponent,
     SobreNosotrosComponent
