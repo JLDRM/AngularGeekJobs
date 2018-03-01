@@ -6,7 +6,6 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
-
 import { GeekService } from '../servicios/geek.service';
 
 import { Geek } from '../../models/geek';
@@ -18,17 +17,17 @@ import { Geek } from '../../models/geek';
 })
 
 export class FormUsuarioComponent implements OnInit {
-
   modalRef: BsModalRef;
-
   @ViewChild('ok') ok: any;
   @ViewChild('fail') fail: any;
+<<<<<<< HEAD
   @ViewChild(ModalDirective) modal: ModalDirective;
   messages: string[];
 
 
+=======
+>>>>>>> 9f64d6407b1d4d54d853371147e9d0f16dfa4c85
   usuarioForm: FormGroup;
-
   usuario: Geek = {
     nombre: 'Josep',
     apellidos: 'Lopez',
@@ -46,10 +45,8 @@ export class FormUsuarioComponent implements OnInit {
     password: 'Nojodas4!'
   };
 
-  constructor(private fb: FormBuilder, private post: GeekService, private modalService: BsModalService,
-     private router: Router) {
-
-
+  constructor(private fb: FormBuilder, private post: GeekService,
+    private modalService: BsModalService, private router: Router) {
     this.createForm();
   }
 
@@ -72,45 +69,36 @@ export class FormUsuarioComponent implements OnInit {
       'nombre': new FormControl(this.usuario.nombre, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'apellidos': new FormControl(this.usuario.apellidos, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'email': new FormControl(this.usuario.email, [
         Validators.required,
         Validators.email
-
       ]),
       'password': new FormControl(this.usuario.password, [
         Validators.required,
         Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')
-
       ]),
       'confirmacionpass': new FormControl(this.usuario.confirmacionpass, [
         Validators.required,
         Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$'),
         matchOtherValidator('password')
-
       ]),
       'telefono': new FormControl(this.usuario.telefono, [
         Validators.required,
         Validators.pattern('[0-9]{9}')
-
       ]),
       'habilidades': new FormControl(this.usuario.habilidades, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ]),
       'descripcion': new FormControl(this.usuario.descripcion, [
         Validators.required,
         Validators.pattern('[A-Z ÁÉÍÓÚ][a-z áéíóú]*')
-
       ])
-
     });
   }
 
@@ -136,15 +124,9 @@ export class FormUsuarioComponent implements OnInit {
         console.log(response);
         response.json();
         console.log(response.json());
-
       });
-
     } else {
-
       alert('El Formulario contiene errores');
     }
-
   }
-
 }
-

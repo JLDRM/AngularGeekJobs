@@ -17,8 +17,6 @@ export class RegistroUsuarioComponent implements OnInit {
       $('body,html').stop(true, true).animate({
         scrollTop: $(strAncla).offset().top - 60
       }, 1000);
-
     });
   }
-
 }

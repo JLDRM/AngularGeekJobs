@@ -63,6 +63,5 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
     } else {
       alert('Lo sentimos, se ha producido un error');
     }
-
   }
 }

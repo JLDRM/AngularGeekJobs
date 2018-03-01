@@ -14,7 +14,7 @@ paths:
           description: actualización campo en concreto
           required: true
           type: string
-      -   name: apellido
+      -   name: apellidos
           in: formData
           description: actualización campo en concreto
           required: true
@@ -32,7 +32,7 @@ paths:
       -   name: habilidades_principales
           in: formData
           description: actualización campo en concreto
-          required: true
+          required: false
           type: string
       -   name: password
           in: formData
@@ -77,7 +77,7 @@ paths:
           description: ok
         400:
           description: usuario incorrecto
-  /perfil/{id}:
+  /usuario/{id}:
     get:
       description:  login endpoint
       parameters:
@@ -103,7 +103,7 @@ paths:
           description: ok
         400:
           description: usuario incorrecto
-  /update/{id}:
+  /usuario/{id}:
     put:
       description:  update endpoint/ El usuario correctamente logeado desde su perfil podrá actualizar toda su información.
       parameters:

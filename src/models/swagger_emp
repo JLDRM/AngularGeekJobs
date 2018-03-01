@@ -1,0 +1,110 @@
+swagger: '2.0'
+info:
+  title: GEEK JOBS empresas API
+  version: "0.0.1"
+paths:
+  /registro:
+    post:
+      description: Registro empresa
+      parameters:
+        - name: nombre_emp
+          in: formData
+          description: nombre contacto empresa
+          required: true
+          type: string
+        - name: apellido_emp
+          in: formData
+          description: apellido contacto empresa
+          required: true
+          type: string
+        - name: email_emp
+          in: formData
+          description: email empresa
+          required: true
+          type: string
+        - name: password_emp
+          in: formData
+          description: password empresa
+          required: true
+          type: string
+        - name: cpassword_emp
+          in: formData
+          description: confirmación password empresa
+          required: true
+          type: string
+        - name: empresa_emp
+          in: formData
+          description: nombre empresa
+          required: true
+          type: string
+        - name: nif_emp
+          in: formData
+          description: NIF empresa
+          required: true
+          type: string
+        - name: telefono_emp
+          in: formData
+          description: teléfono empresa
+          required: true
+          type: string
+        - name: stack_emp
+          in: formData
+          description: stack tecnológico empresa
+          required: false
+          type: array
+          items:
+            type: string
+      consumes:
+      - multipart/form-data
+      responses:
+        200:
+          description: registrado con éxito
+        400:
+          description: registro fallido
+  /login_emp:
+    post:
+      description: Login empresa
+      parameters:
+        - name: email_emp
+          in: formData
+          description: email empresa
+          required: true
+          type: string
+        - name: password_emp
+          in: formData
+          description: password empresa
+          required: true
+          type: string
+      consumes:
+      - multipart/form-data
+      responses:
+        200:
+          description: login correcto
+        400:
+          description: login incorrecto    
+definitions:
+  Empresa:
+    type: object
+    properties:
+      id:
+        type: integer
+      nombre_emp:
+        type: string
+      apellido_emp:
+        type: string
+      email_emp:
+        type: string
+      password_emp:
+        type: string
+      cpassword_emp:
+        type: string
+      empresa_emp:
+        type: string
+      nif_emp:
+        type: string
+      telefono_emp:
+        type: string
+      stack_emp:
+        type: array
+        items:
+          type: string

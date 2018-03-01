@@ -26,6 +26,7 @@ import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { TestGetComponent } from './test-get/test-get.component';
 import { EmpresaService } from './servicios/empresa.service';
+import { FormPerfilUsuarioComponent } from './form-perfil-usuario/form-perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { EmpresaService } from './servicios/empresa.service';
     PoliticaPrivacidadComponent,
     HomeGeekComponent,
     HomeEmpresaComponent,
-    TestGetComponent
+    TestGetComponent,
+    FormPerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
