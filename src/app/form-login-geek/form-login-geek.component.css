@@ -15,14 +15,25 @@
 .alert-danger {
     width: 212px;
 }
-.form-check-input {
-    margin-left: 5px;
-}
 .form-check {
     text-align: center;
     margin-bottom: 60px;
+    font-size: 13px;
 }
 .row {
     margin-right: 0;
     margin-left: 0;
+}
+.formLogin a {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-left: 5px;
+}
+
+.form-check span:hover {
+    color: grey;
+}
+.form-check span {
+    color: #0e7fb0;
 }

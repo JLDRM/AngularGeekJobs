@@ -12,6 +12,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
   templateUrl: './form-login-geek.component.html',
   styleUrls: ['./form-login-geek.component.css']
 })
+
 export class FormLoginGeekComponent implements OnInit, OnChanges {
   loginGeekForm: FormGroup;
 
@@ -87,3 +88,5 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
     }
   }
 }
+
+

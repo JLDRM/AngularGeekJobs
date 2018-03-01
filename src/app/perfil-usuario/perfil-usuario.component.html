@@ -1,11 +1,16 @@
 <section class="container">
-  <!-- ESTA PLANTILLA ITERA UN ARRAY DE OBJETOS USUARIO -->
   <!-- BANNER Y FOTO DE PERFIL -->
-  
+
   <div id="perfil" class="row profiles_banner">
+<<<<<<< HEAD
     
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 profile-info-block " >
       <div class="profile-image" id="fotoPerfil" style="background-image: url( '{{ usuario.fotoPerfil }}' )"></div>
+=======
+
+    <div class="profile-info-block ">
+      <div class="profile-image" id="fotoPerfil" style="background-image: url('{{ usuario.fotoPerfil }}')"></div>
+>>>>>>> 4bb10bb321b346475e09a760c2f43f1b52371736
       <div class="profile-name">
         <h1>
           <a title="{{ usuario.nombre }}" id="nombre">{{ usuario.nombre }} {{usuario.apellidos}}</a>
@@ -14,13 +19,9 @@
     </div>
 
   </div>
-  <!-- <div id="cont"> -->
-
-
   <div class="row" id="accordion" role="tablist">
 
     <!-- =================== DESCRIPTION ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12  card">
       <div class="card-header" role="tab" id="headingOne">
         <h5 class="mb-0">
@@ -37,7 +38,6 @@
     </div>
 
     <!-- =================== HABBILIDADES PRINCIPALES ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12  card">
       <div class="card-header" role="tab" id="headingTwo">
         <h5 class="mb-0">
@@ -67,7 +67,6 @@
     </div>
 
     <!-- =================== OTRAS HABILIDADES ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12  card">
       <div class="card-header" role="tab" id="headingThree">
         <h5 class="mb-0">
@@ -84,7 +83,6 @@
     </div>
 
     <!-- =================== PORTFOLIO ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12  card">
       <div class="card-header" role="tab" id="headingThree">
         <h5 class="mb-0">
@@ -101,7 +99,6 @@
     </div>
 
     <!-- =================== EXPERIENCIA ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12  card">
       <div class="card-header" role="tab" id="headingThree">
         <h5 class="mb-0">
@@ -118,7 +115,6 @@
     </div>
 
     <!-- =================== FORMACION ============================================================================== -->
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 card">
       <div class="card-header" role="tab" id="headingThree">
         <h5 class="mb-0">
@@ -133,8 +129,5 @@
         </div>
       </div>
     </div>
-
-    <!-- </div> -->
-
   </div>
 </section>

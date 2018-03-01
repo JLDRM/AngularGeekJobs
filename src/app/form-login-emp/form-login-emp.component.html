@@ -1,57 +1,58 @@
-  <!-- Inputs login -->
-  <section class="container formul rounded-bottom" id="form">
-      <form [formGroup]="loginEmpForm" (ngSubmit)="onSubmit(loginEmpForm.value)" novalidate>
-        <a name="loginEmpForm" id="loginEmpForm"></a>
-      <div class="row-fluid formlogin">
-        <!-- Inputs centrados -->
-        <div class="align-self-center">
-          <div class="form-group has-danger">
-            <label class="sr-only" for="email">E-Mail Address</label>
-            <!-- Alineacion icono y input -->
-            <div class="row">
-              <i class="col-2 col-sm-2 col-md-2 col-lg-2 fa fa-at"></i>
-              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
-                <!-- Input get y span error -->
-                <input type="email" name="email" class="form-control" id="mail-emp" placeholder="usuario@email.com" formControlName="email_emp">
-                <div *ngIf="loginEmpForm.get('email_emp').invalid && (loginEmpForm.get('email_emp').dirty || loginEmpForm.get('email_emp').touched)"
+<!-- Inputs login -->
+<section class="container formul rounded-bottom" id="form">
+  <form [formGroup]="loginEmpForm" (ngSubmit)="onSubmit(loginEmpForm.value)" novalidate>
+    <a name="loginEmpForm" id="loginEmpForm"></a>
+    <div class="row-fluid formlogin">
+      <!-- Inputs centrados -->
+      <div class="align-self-center">
+        <div class="form-group has-danger">
+          <label class="sr-only" for="email">E-Mail Address</label>
+          <!-- Alineacion icono y input -->
+          <div class="row">
+            <i class="col-2 col-sm-2 col-md-2 col-lg-2 fa fa-at"></i>
+            <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+              <!-- Input get y span error -->
+              <input type="email" name="email" class="form-control" id="mail-emp" placeholder="usuario@email.com" formControlName="email_emp">
+              <div *ngIf="loginEmpForm.get('email_emp').invalid && (loginEmpForm.get('email_emp').dirty || loginEmpForm.get('email_emp').touched)"
                 class="alert alert-danger">
-                  <span>Login incorrecto</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Input contraseña -->
-          <div class="form-group has-danger">
-            <label class="sr-only" for="email">Contraseña</label>
-            <!-- Alineacion icono y input -->
-            <div class="row">
-              <i class="col-2 col-sm-2 col-md-2 col-lg-2 fa fa-key"></i>
-              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
-                <!-- Input get y span error -->
-                <input type="password" name="password" class="form-control" id="pass-emp" formControlName="password_emp">
-                <div *ngIf="loginEmpForm.get('password_emp').invalid && (loginEmpForm.get('password_emp').dirty || loginEmpForm.get('password_emp').touched)"
-                class="alert alert-danger">
-                  <span>Login incorrecto</span>
-                </div>
+                <span>Login incorrecto</span>
               </div>
             </div>
           </div>
         </div>
-        <!-- Boton entrar y checkbox -->
-        <div class="row-fluid formlogin">
-          <div class="align-self-center">
-            <div class="form-check">
-              <button type="submit" class="btn btn-primary" id="bttn-emp">
-                <i class="fa fa-paper-plane-o" style="padding-right: 1em"></i>Entra</button>
-              <label class="form-check-label"></label>
-              <label>
-                <input class="form-check-input" name="remember" type="checkbox">
-                <span style="padding-left: 2em" name="remember" type="checkbox">Recuérdame</span>
-              </label>
+        <!-- Input contraseña -->
+        <div class="form-group has-danger">
+          <label class="sr-only" for="email">Contraseña</label>
+          <!-- Alineacion icono y input -->
+          <div class="row">
+            <i class="col-2 col-sm-2 col-md-2 col-lg-2 fa fa-key"></i>
+            <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+              <!-- Input get y span error -->
+              <input type="password" name="password" class="form-control" id="pass-emp" formControlName="password_emp">
+              <div *ngIf="loginEmpForm.get('password_emp').invalid && (loginEmpForm.get('password_emp').dirty || loginEmpForm.get('password_emp').touched)"
+                class="alert alert-danger">
+                <span>Login incorrecto</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Boton entrar y checkbox -->
+      <div class="row-fluid formlogin">
+        <div class="align-self-center">
+          <div class="form-check">
+            <button type="submit" class="btn btn-primary" id="bttn">
+              <i class="fa fa-paper-plane-o" style="padding-right: 1em">
+              </i>
+              Entra
+            </button>
+            <a>¿No tienes cuenta?</a>
+            <span routerLink="/form-empresa">¡Regístrate!
+            </span>
+          </div>
+        </div>
+      </div>
+<<<<<<< HEAD
     </form>
   </section>
 
@@ -85,3 +86,8 @@
   </ng-template>
   
   <!-- ========== ========== ========== -->
+=======
+    </div>
+  </form>
+</section>
+>>>>>>> 4bb10bb321b346475e09a760c2f43f1b52371736
