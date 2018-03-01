@@ -1,8 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginGeek } from '../../models/loginGeek';
 import { GeekService } from '../servicios/geek.service';
 import { Router } from '@angular/router';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 
 @Component({
   selector: 'app-form-login-geek',
@@ -12,12 +15,18 @@ import { Router } from '@angular/router';
 export class FormLoginGeekComponent implements OnInit, OnChanges {
   loginGeekForm: FormGroup;
 
+  modalRef: BsModalRef;
+
+  @ViewChild('badFill') badFill: any;
+  @ViewChild('badLog') badLog: any;
+
   login: LoginGeek = {
     email_geek: '',
     password_geek: ''
   };
 
-  constructor(private fb: FormBuilder, private post: GeekService, private router: Router) {
+  constructor(private fb: FormBuilder, private post: GeekService, private router: Router,
+    private modalService: BsModalService) {
     this.createForm();
   }
 
@@ -26,6 +35,10 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
       email_geek: ['', Validators.required],
       password_geek: ['', Validators.required],
     });
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   ngOnInit(): void {
@@ -48,20 +61,29 @@ export class FormLoginGeekComponent implements OnInit, OnChanges {
     let id;
     if (this.loginGeekForm.valid) {
       console.log(dat);
-      this.post.postLoginUsuario(dat).subscribe(x => {
-        console.log(x);
-        id = x['_body'];
+      this.post.postLoginUsuario(dat).subscribe((x) => {
+        console.log(x.status);
 
-        // localStorage para guardar id de Usuario
-        if (window.localStorage) {
-          localStorage.setItem('idUsuario', id);
+        if (x.status === 200) {
+          id = x['_body'];
+
+          // localStorage para guardar id de Usuario
+          if (window.localStorage) {
+            localStorage.setItem('idUsuario', id);
+          }
+          this.router.navigateByUrl('perfil-usuario');
+
         }
-        this.router.navigateByUrl('perfil-usuario');
+
+      }, (err) => {
+        if (err.status == 401) {
+          this.openModal(this.badLog);
+        }
+
       });
-      console.log(id);
-      console.log('Bienvenid@ a Geek Jobs');
+
     } else {
-      alert('Lo sentimos, se ha producido un error');
+      this.openModal(this.badFill);
     }
   }
 }

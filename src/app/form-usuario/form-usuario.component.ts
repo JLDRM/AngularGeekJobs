@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { matchOtherValidator } from '../directivas/custom-validator-pass-equal';
+import { matchOtherValidator } from '../customValidator/custom-validator-pass-equal';
 import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Router } from '@angular/router';
@@ -20,9 +20,10 @@ export class FormUsuarioComponent implements OnInit {
   modalRef: BsModalRef;
   @ViewChild('ok') ok: any;
   @ViewChild('fail') fail: any;
-  @ViewChild(ModalDirective) modal: ModalDirective;
-  messages: string[];
+  @ViewChild('badFill') badFill: any;
+
   usuarioForm: FormGroup;
+
   usuario: Geek = {
     nombre: 'Josep',
     apellidos: 'Lopez',
@@ -120,7 +121,7 @@ export class FormUsuarioComponent implements OnInit {
         console.log(response.json());
       });
     } else {
-      alert('El Formulario contiene errores');
+      this.openModal(this.badFill);
     }
   }
 }

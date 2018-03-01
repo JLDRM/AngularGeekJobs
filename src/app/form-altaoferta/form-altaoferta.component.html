@@ -95,3 +95,34 @@
     </div>
   </form>
 </section>
+
+<!-- ========== MODAL BADFILL ========== -->
+  
+<ng-template #badFill>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">¡El Formulario contiene errores!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Solventalos y pruébalo de nuevo
+    </div>
+  </ng-template>
+  
+  <!-- ========== ========== ========== -->
+  <!-- ========== MODAL GOODFILL ========== -->
+  
+<ng-template #goodFill>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">¡Felicidades!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        La oferta se ha publicado correctamente
+    </div>
+  </ng-template>
+  
+  <!-- ========== ========== ========== -->

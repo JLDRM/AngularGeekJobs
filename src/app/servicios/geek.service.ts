@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Geek } from '../../models/geek';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class GeekService {
@@ -17,8 +18,9 @@ export class GeekService {
       .catch(this.handleError);
   }
 
-  private handleError(error: Response): Promise<Geek[]> {
-    return Promise.reject(error);
+  private handleError(error: Response) {
+    console.error(error);
+    return (error.json() || 'Server error');
   }
 
   private extractData(res: Response): Promise<Geek[]> {
@@ -30,6 +32,10 @@ export class GeekService {
   }
 
   postLoginUsuario(dat) {
-    return this.http.post(this.url + '/usuario/login', dat);
+    return this.http.post(this.url + '/usuario/login', dat)
+      .catch((err) => {
+        console.log(err);
+        return Observable.throw(err)
+      });
   }
 }

@@ -1,6 +1,9 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Oferta } from '../../models/oferta';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-altaoferta',
@@ -9,6 +12,10 @@ import { Oferta } from '../../models/oferta';
 })
 
 export class FormAltaofertaComponent implements OnInit {
+  modalRef: BsModalRef;
+  @ViewChild('badFill') badFill: any;
+  @ViewChild('goodFill') goodFill: any;
+
   altaofertaForm: FormGroup;
   oferta: Oferta = {
     position: "",
@@ -23,8 +30,12 @@ export class FormAltaofertaComponent implements OnInit {
     hskills: "",
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private modalService: BsModalService, private router: Router) {
     this.createForm();
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   createForm() {
@@ -87,14 +98,16 @@ export class FormAltaofertaComponent implements OnInit {
       ]),
     })
   }
+
   ngOnChanges() {
   }
 
   onSubmit() {
     if (this.altaofertaForm.valid) {
-      console.log('La oferta se ha publicado correctamente');
+      this.openModal(this.goodFill);
+
     } else {
-      alert('Lo sentimos, se ha producido un error')
+      this.openModal(this.badFill);
     }
   }
 }

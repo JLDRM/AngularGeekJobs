@@ -1,8 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginEmp } from '../../models/loginEmp';
 import { EmpresaService } from '../servicios/empresa.service';
 import { Router } from '@angular/router';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 
 @Component({
   selector: 'app-form-login-emp',
@@ -15,8 +18,13 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
     email_emp: '',
     password_emp: ''
   };
+  modalRef: BsModalRef;
 
-  constructor(private fb: FormBuilder, private post: EmpresaService, private router: Router) {
+  @ViewChild('badFill') badFill: any;
+  @ViewChild('badLog') badLog: any;
+
+  constructor(private fb: FormBuilder, private post: EmpresaService, private router: Router,
+    private modalService: BsModalService) {
     this.createForm();
   }
 
@@ -25,6 +33,10 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
       email_emp: '',
       password_emp: ''
     });
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   ngOnInit(): void {
@@ -46,15 +58,19 @@ export class FormLoginEmpComponent implements OnInit, OnChanges {
     let id;
     if (this.loginEmpForm.valid) {
       console.log(data)
-      this.post.postLoginEmpresa(data).subscribe(x => {
-        console.log(x);
-        id = x['_id'];
-        this.router.navigateByUrl('form-oferta');
-      });
-      console.log(id);
-      console.log('Bienvenid@ a Geek Empresas');
+      this.post.postLoginEmpresa(data).subscribe((x) => {
+        if (x.status === 200) {
+          console.log(x);
+          id = x['_id'];
+          this.router.navigateByUrl('form-oferta');
+        }
+      }), (err) => {
+        if (err.status == 401) {
+          this.openModal(this.badLog);
+        }
+      }
     } else {
-      alert('Lo sentimos, se ha producido un error')
+      this.openModal(this.badFill);
     }
   }
 }

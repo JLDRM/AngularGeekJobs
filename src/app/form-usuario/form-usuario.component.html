@@ -110,17 +110,16 @@
 
 <!-- ========== MODAL DE OK ========== -->
 
-<ng-template #ok bsModal role="dialog"
-aria-labelledby="mySmallModalLabel" aria-hidden="true" (onHide)="nosVamos()">
+<ng-template #ok bsModal role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <h4 class="modal-title">Felicidades!! Has sido registrado correctamente!</h4>
+    <h4 class="modal-title"> Has sido registrado correctamente</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
 
   </div>
   <div class="modal-body">
-    Ve a probar si ya te puedes logear con tu email y contraseña!!
+   Accede a tu cuenta con tu email y contraseña.
   </div>
 </ng-template>
 
@@ -136,8 +135,24 @@ aria-labelledby="mySmallModalLabel" aria-hidden="true" (onHide)="nosVamos()">
     </button>
   </div>
   <div class="modal-body">
-    This is a modal.
+   Disculpen las moléstias.
   </div>
 </ng-template>
 
 <!-- ========== ========== ========== -->
+<!-- ========== MODAL BADFILL ========== -->
+  
+<ng-template #badFill>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">¡El Formulario contiene errores!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Solventalos y pruébalo de nuevo
+    </div>
+  </ng-template>
+  
+  <!-- ========== ========== ========== -->
+  

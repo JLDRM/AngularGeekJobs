@@ -1,7 +1,10 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Empresa } from '../../models/empresa';
 import { EmpresaService } from '../servicios/empresa.service';
+import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-empresa',
@@ -9,6 +12,11 @@ import { EmpresaService } from '../servicios/empresa.service';
   styleUrls: ['./form-empresa.component.css']
 })
 export class FormEmpresaComponent implements OnInit {
+  modalRef: BsModalRef;
+  @ViewChild('ok') ok: any;
+  @ViewChild('fail') fail: any;
+  @ViewChild('badFill') badFill: any;
+
   empresaForm: FormGroup;
   empresa: Empresa = {
     nombre_emp: '',
@@ -23,7 +31,8 @@ export class FormEmpresaComponent implements OnInit {
     //chk_emp: ''
   };
 
-  constructor(private fb: FormBuilder, private post: EmpresaService) {
+  constructor(private fb: FormBuilder, private post: EmpresaService,
+    private modalService: BsModalService, private router: Router) {
     this.createForm();
   }
   createForm() {
@@ -39,6 +48,15 @@ export class FormEmpresaComponent implements OnInit {
       stack_emp: []
       //chk_emp: ''
     })
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  nosVamosEmpresa() {
+    console.log('hola');
+    this.router.navigateByUrl('login-emp');
   }
 
   ngOnInit(): void {
@@ -93,13 +111,19 @@ export class FormEmpresaComponent implements OnInit {
     let id;
     if (this.empresaForm.valid) {
       this.post.postEmpresaForm(dta).subscribe(x => {
+        if (x.status == 200) {
+          this.openModal(this.ok);
+          this.nosVamosEmpresa();
+        } else {
+          this.openModal(this.fail);
+        }
+
         console.log(x);
         id = x['_id'];
       });
-      console.log(id);
-      console.log('Registrado correctamente');
+
     } else {
-      alert('Lo sentimos, se ha producido un error')
+      this.openModal(this.badFill);
     }
   }
 }
