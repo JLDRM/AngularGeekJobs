@@ -14,7 +14,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { HomeEmpresaComponent } from './home-empresa/home-empresa.component';
 import { HomeGeekComponent } from './home-geek/home-geek.component';
 import { PaginaConstruccionComponent } from './pagina-construccion/pagina-construccion.component';
-//import { ContactoComponent } from './contacto/contacto.component';
+import {SobreNosotrosComponent} from './sobre-nosotros/sobre-nosotros.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
   { path: 'perfil-usuario', component: PerfilUsuarioComponent },
   { path: 'pagina-construccion', component: PaginaConstruccionComponent },
-  //{ path: 'contacto', component: ContactoComponent }
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent }
 ]
 
 @NgModule({

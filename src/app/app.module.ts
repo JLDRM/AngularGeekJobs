@@ -28,7 +28,6 @@ import { TestGetComponent } from './test-get/test-get.component';
 import { EmpresaService } from './servicios/empresa.service';
 import { FormPerfilUsuarioComponent } from './form-perfil-usuario/form-perfil-usuario.component';
 import { PaginaConstruccionComponent } from './pagina-construccion/pagina-construccion.component';
-import { ContactoComponent } from './contacto/contacto.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 @NgModule({
@@ -51,7 +50,6 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
     TestGetComponent,
     FormPerfilUsuarioComponent,
     PaginaConstruccionComponent,
-    ContactoComponent,
     SobreNosotrosComponent
   ],
   imports: [
