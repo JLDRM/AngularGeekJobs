@@ -42,7 +42,7 @@ BANNER DE PERFIL / FOTO DE PERFIL
   width: 160px;
   height: 160px;
   border-radius: 100%;
-  background: url('/assets/img/persona.png');
+  background: url('/assets/img/fotoPerfil.jpg');
   background-size: 160px 160px;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.3);
   border: 4px solid #FFF;
