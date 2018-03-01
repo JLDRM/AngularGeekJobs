@@ -2,7 +2,7 @@
   <div class="form-row pt-5">
     <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12">
       <label for="nombre"></label>Nombre
-      <input class="form-control" id="nombre" type="text" placeholder="Nombre" name="nombre" formControlName="nombre">
+      <input class="form-control" id="nombre" [ngModel]="usuario.nombre" type="text" placeholder="Nombre" name="nombre" formControlName="nombre">
       <div *ngIf="usuarioForm.get('nombre').invalid && (usuarioForm.get('nombre').dirty || usuarioForm.get('nombre').touched)"
         class="alert alert-danger">
         <span>Debes introducir un nombre correcto (Debe empezar por Mayúscula)</span>
@@ -11,7 +11,8 @@
 
     <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
       <label for="apellido"></label>Apellido
-      <input class="form-control" id="apellidos" type="text" placeholder="apellidos" name="apellidos" formControlName='apellidos'>
+      <input class="form-control" [ngModel]="usuario.apellidos" id="apellidos" type="text" placeholder="apellidos" name="apellidos"
+        formControlName='apellidos'>
       <div *ngIf="usuarioForm.get('apellidos').invalid && (usuarioForm.get('apellidos').dirty || usuarioForm.get('apellidos').touched)"
         class="alert alert-danger">
         <span>Debes introducir un apellido correcto (Debe empezar por Mayúscula)</span>
@@ -22,7 +23,7 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="email"></label>Email
-      <input class="form-control" id="email" type="email" placeholder="Email" name="email" formControlName='email'>
+      <input class="form-control" [ngModel]="usuario.email" id="email" type="email" placeholder="Email" name="email" formControlName='email'>
       <div *ngIf="usuarioForm.get('email').invalid && (usuarioForm.get('email').dirty || usuarioForm.get('email').touched)" class="alert alert-danger">
         <span>Debes introducir un email válido</span>
       </div>
@@ -32,7 +33,8 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="contraseña"></label>Contraseña
-      <input class="form-control" id="contraseña" type="password" placeholder="Contraseña" name="contraseña" formControlName='password'>
+      <input class="form-control" [ngModel]="usuario.password" id="contraseña" type="password" placeholder="Contraseña" name="contraseña"
+        formControlName='password'>
       <div *ngIf="usuarioForm.get('password').invalid && (usuarioForm.get('password').dirty || usuarioForm.get('password').touched)"
         class="alert alert-danger">
         <span>Debes introducir una contraseña válida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter Especial)</span>
@@ -44,12 +46,13 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="conficontraseña"></label>Confirmación Contraseña
-      <input class="form-control" id="conficontraseña" type="password" placeholder="Confirmación Contraseña" name="conficontraseña"
-        formControlName='confirmacionpass'>
+      <input class="form-control" [ngModel]="usuario.confirmacionpass" id="conficontraseña" type="password" placeholder="Confirmación Contraseña"
+        name="conficontraseña" formControlName='confirmacionpass'>
       <div *ngIf="usuarioForm.get('confirmacionpass').invalid && (usuarioForm.get('confirmacionpass').dirty || usuarioForm.get('confirmacionpass').touched)"
         class="alert alert-danger">
         <span>Debes introducir una confirmacion de contraseña válida (Debe contener 1 Mayúscula 1 Minúscula 1 Número y 1 Carácter
-          Especial)</span>
+          Especial)
+        </span>
         <span *ngIf="usuarioForm.get('password').value!=usuarioForm.get('confirmacionpass').value">== Las contraseñas deben ser iguales</span>
       </div>
     </div>
@@ -58,7 +61,8 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="telefono"></label>Telefono
-      <input class="form-control" id="telef" type="Telefono" placeholder="Teléfono" name="telefono" formControlName='telefono'>
+      <input class="form-control" [ngModel]="usuario.telefono" id="telef" type="Telefono" placeholder="Teléfono" name="telefono"
+        formControlName='telefono'>
       <div *ngIf="usuarioForm.get('telefono').invalid && (usuarioForm.get('telefono').dirty || usuarioForm.get('telefono').touched)"
         class="alert alert-danger">
         <span>Debes introducir un teléfono válido</span>
@@ -69,8 +73,8 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="habilidad"></label>¿Cuál es tu principal habilidad técnica?
-      <input class="form-control" id="habili" type="text" placeholder="¿Cuál es tu principal habilidad técnica?" name="habilidades"
-        formControlName='habilidades'>
+      <input class="form-control" [ngModel]="usuario.habilidades" id="habili" type="text" placeholder="¿Cuál es tu principal habilidad técnica?"
+        name="habilidades" formControlName='habilidades'>
       <div *ngIf="usuarioForm.get('habilidades').invalid && (usuarioForm.get('habilidades').dirty || usuarioForm.get('habilidades').touched)"
         class="alert alert-danger">
         <span>Debes introducir una habilidad válida</span>
@@ -81,7 +85,8 @@
   <div class="form-row">
     <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12">
       <label for="descripcion"></label>¿Y tu descripcion?
-      <input class="form-control" id="descripcion" type="text" placeholder="¿Y tu descripcion favorito?" name="descripcion" formControlName='descripcion'>
+      <input class="form-control" [ngModel]="usuario.descripcion" id="descripcion" type="text" placeholder="¿Y tu descripcion favorito?"
+        name="descripcion" formControlName='descripcion'>
       <div *ngIf="usuarioForm.get('descripcion').invalid && (usuarioForm.get('descripcion').dirty || usuarioForm.get('descripcion').touched)"
         class="alert alert-danger">
         <span>Debes introducir una descripcion válido</span>
@@ -103,4 +108,36 @@
   </div>
 </form>
 
-<h4>{{usuarioForm.value|json}}</h4>
+<!-- ========== MODAL DE OK ========== -->
+
+<ng-template #ok bsModal role="dialog"
+aria-labelledby="mySmallModalLabel" aria-hidden="true" (onHide)="nosVamos()">
+  <div class="modal-header">
+    <h4 class="modal-title">Felicidades!! Has sido registrado correctamente!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+  <div class="modal-body">
+    Ve a probar si ya te puedes logear con tu email y contraseña!!
+  </div>
+</ng-template>
+
+<!-- ========== ========== ========== -->
+
+<!-- ========== MODAL DE FAIL ========== -->
+
+<ng-template #fail>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Error de conexión!! Vuelva a probarlo más tarde</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<!-- ========== ========== ========== -->

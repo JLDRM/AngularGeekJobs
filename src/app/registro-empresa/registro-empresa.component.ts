@@ -20,5 +20,4 @@ export class RegistroEmpresaComponent implements OnInit {
 
     });
   }
-
 }
